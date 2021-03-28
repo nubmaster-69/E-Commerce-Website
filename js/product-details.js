@@ -24,14 +24,3 @@ window.addEventListener('scroll', () => {
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 0);
 });
-
-// Add item(s) to favorite list
-const toFavList = document.querySelectorAll('.to-fav-list')
-toFavList.forEach(item => {
-    item.addEventListener('click', () => {
-        if (item.classList.contains('far'))
-            item.classList.replace('far', 'fas');
-        else
-            item.classList.replace('fas', 'far');
-    });
-});
