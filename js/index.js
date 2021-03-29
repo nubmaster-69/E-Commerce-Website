@@ -25,12 +25,12 @@ const page1 = [
     {
         id: 1,
         name: 'MSI GE66 10SF',
-        price: '$ 2,604',
+        price: '$ 2,600',
         img: './img/products/list/1.png'
     },
     {
         id: 2,
-        name: 'MMSI Creator Series',
+        name: 'MSI Creator Series',
         price: '$ 1,521',
         img: './img/products/list/2.png'
     },
@@ -77,19 +77,19 @@ const page2 = [
         id: 9,
         name: 'ASUS RoG Strix G17',
         price: '$ 1,599',
-        img: './img/products/list/11.png'
+        img: './img/products/list/9.png'
     },
     {
         id: 10,
         name: 'MMSI Creator Series',
         price: '$ 1,521',
-        img: './img/products/list/2.png'
+        img: './img/products/list/10.png'
     },
     {
         id: 11,
         name: 'MSI GL75 Leopard',
         price: '$ 996',
-        img: './img/products/list/3.png'
+        img: './img/products/list/11.png'
     },
     {
         id: 12,

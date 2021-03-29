@@ -34,6 +34,90 @@ const products = [
         aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
     },
     {
+        id: 2,
+        showCaseImgs: [
+            "1.png",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.png"
+        ],
+        productName: 'MSI 15.6" Creator Series Creator 15 Multi-Touch',
+        rate: 4.7,
+        reviews: 71,
+        sold: 93,
+        screen: '15.6" 1920 x 1080',
+        processor: 'Intel Core i7-10875H 2.3GHz - 5.1GHz 16MB',
+        memory: '6GB (8GB x2) DDR4 2666MHz',
+        hardDrive: '1TB SSD PCIe G3X4 (2 Slots)',
+        oldPrice: '$1,599',
+        newPrice: '$1,399',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 3,
+        showCaseImgs: [
+            "1.png",
+            "2.jpg",
+            "3.jpg",
+            "4.png",
+            "5.png"
+        ],
+        productName: 'MSI GL75 Leopard',
+        rate: 4.5,
+        reviews: 23,
+        sold: 61,
+        screen: '15.6" 1920 x 1080',
+        processor: 'Intel Core i7-10875H 2.3GHz - 5.1GHz 16MB',
+        memory: '6GB (8GB x2) DDR4 2666MHz',
+        hardDrive: '1TB SSD PCIe G3X4 (2 Slots)',
+        oldPrice: '$1,599',
+        newPrice: '$1,399',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 4,
+        showCaseImgs: [
+            "1.png",
+            "2.jpg",
+            "3.jpg",
+            "4.png",
+            "5.jpg"
+        ],
+        productName: 'ASUS TUF A15',
+        rate: 4.6,
+        reviews: 37,
+        sold: 55,
+        screen: '15.6" 1920 x 1080',
+        processor: 'Intel Core i7-10875H 2.3GHz - 5.1GHz 16MB',
+        memory: '6GB (8GB x2) DDR4 2666MHz',
+        hardDrive: '1TB SSD PCIe G3X4 (2 Slots)',
+        oldPrice: '$1,599',
+        newPrice: '$1,399',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 5,
+        showCaseImgs: [
+            "1.png",
+            "2.jpg",
+            "3.png",
+            "4.jpg",
+            "5.png"
+        ],
+        productName: 'Acer Nitro 5',
+        rate: 4.7,
+        reviews: 43,
+        sold: 64,
+        screen: '15.6" 1920 x 1080',
+        processor: 'Intel Core i7-10875H 2.3GHz - 5.1GHz 16MB',
+        memory: '6GB (8GB x2) DDR4 2666MHz',
+        hardDrive: '1TB SSD PCIe G3X4 (2 Slots)',
+        oldPrice: '$800',
+        newPrice: '$696',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
         id: 9,
         showCaseImgs: [
             "1.png",
