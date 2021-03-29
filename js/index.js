@@ -1,26 +1,3 @@
-const images = [
-    {
-        imgSrc: "./img/products/img-slider/1.png",
-        bgColor: "#ff3e00"
-    },
-    {
-        imgSrc: "./img/products/img-slider/2.png",
-        bgColor: "#766bd1"
-    },
-    {
-        imgSrc: "./img/products/img-slider/3.png",
-        bgColor: "#2c6ad9"
-    },
-    {
-        imgSrc: "./img/products/img-slider/4.png",
-        bgColor: "#ff6700"
-    },
-    {
-        imgSrc: "./img/products/img-slider/5.png",
-        bgColor: "#e70213"
-    }
-];
-
 const page1 = [
     {
         id: 1,
@@ -131,22 +108,18 @@ var toFavList;
 const pageNum = document.querySelectorAll('.page-num');
 const prevPage = document.querySelector('.page-prev');
 const nextPage = document.querySelector('.page-next');
+const showcaseImage = document.getElementById('showcase-img');
+const slideImages = document.querySelectorAll('.slide-img');
 
 var currentPage = 1;
 
-// let idx = 0, imagesLength = images.length;
+// Uncomment this function only when needed
+// let idx = 0, imagesLength = slideImages.length;
 // setInterval(function autoSlide() {
 //     idx++;
-//     if (idx >= imagesLength) {
-//         idx = 0;
-//         AutoChangeImg(images[idx].imgSrc);
-//         changeColor(images[idx].bgColor);
-//     }
-//     else {
-//         AutoChangeImg(images[idx].imgSrc);
-//         changeColor(images[idx].bgColor);
-//     }
-// }, 6000);
+//     idx = (idx >= imagesLength ? 0 : idx);
+//     changeColorAndImg(slideImages[idx].getAttribute('src'), slideImages[idx].getAttribute('alt'));
+// }, 3500);
 
 
 // Menu toggle
@@ -155,23 +128,26 @@ menuToggler.addEventListener('click', () => {
     menuToggler.classList.toggle('menu-close');
 });
 
+
 // Sticky navbar after scroll
 window.addEventListener('scroll', () => {
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 0);
 });
 
-function AutoChangeImg(source) {
-    document.getElementById('showcase-img').src = source;
-}
 
-function changeImg(source) {
-    document.getElementById('showcase-img').src = source.src;
-}
+// Landing page - change color and image
+slideImages.forEach(slideImg => {
+    slideImg.addEventListener('click', (e) => {
+        changeColorAndImg(e.currentTarget.getAttribute('src'), e.currentTarget.getAttribute('alt'));
+    });
+});
 
-function changeColor(newColor) {
+function changeColorAndImg(src, newColor) {
+    showcaseImage.setAttribute('src', src);
     document.documentElement.style.setProperty('--primary-color', newColor);
 }
+
 
 // Create items
 let createItem = (idx) => {
