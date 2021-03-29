@@ -148,7 +148,6 @@ var currentPage = 1;
 //     }
 // }, 6000);
 
-// Nav bar
 
 // Menu toggle
 menuToggler.addEventListener('click', () => {
@@ -216,7 +215,6 @@ let getProductDesc = (list) => {
     });
 }
 
-
 window.onload = getProductDesc(page1);
 
 //  Pagination
@@ -245,11 +243,11 @@ nextPage.addEventListener('click', () => {
 });
 
 function createPage(pageIdx) {
-    productContainer.innerHTML = '';
-
     pageNum.forEach(innerPage => {
         innerPage.classList.remove('active');
     });
+
+    productContainer.innerHTML = '';
 
     switch (pageIdx) {
         case 1:
@@ -261,7 +259,7 @@ function createPage(pageIdx) {
             break;
 
         case 3:
-            getProductDesc(page2);
+            getProductDesc(page1);
             break;
 
         case 4:
@@ -270,4 +268,5 @@ function createPage(pageIdx) {
     }
 
     pageNum[pageIdx - 1].classList.add('active');
+    // window.location.href = "./index.html#l-product";
 }
