@@ -31,25 +31,22 @@ const page1 = [
     },
     {
         id: 6,
-        name: 'Acer Concept 3 Ezel',
-        price: '$ 1,692',
+        name: 'MSI GE66 Raider',
+        price: '$ 2,199',
         img: './img/products/list/6.png'
     },
     {
         id: 7,
-        name: 'Acer Aspire 3 Series',
-        price: '$ 549',
+        name: 'Razer Blade',
+        price: '$ 1,599',
         img: './img/products/list/7.png'
     },
     {
         id: 8,
-        name: 'Acer Aspire 3 Series',
-        price: '$ 800',
+        name: 'Acer Predator Helios',
+        price: '$ 1,199',
         img: './img/products/list/8.png'
-    }
-];
-
-const page2 = [
+    },
     {
         id: 9,
         name: 'ASUS RoG Strix G17',
@@ -58,45 +55,48 @@ const page2 = [
     },
     {
         id: 10,
-        name: 'MMSI Creator Series',
-        price: '$ 1,521',
+        name: 'MSI GF65 Thin',
+        price: '$ 1,399',
         img: './img/products/list/10.png'
     },
     {
         id: 11,
-        name: 'MSI GL75 Leopard',
-        price: '$ 996',
+        name: 'MSI GS66 Stealth',
+        price: '$ 2,399',
         img: './img/products/list/11.png'
     },
     {
         id: 12,
-        name: 'ASUS TUF A15',
-        price: '$ 899',
-        img: './img/products/list/4.png'
-    },
+        name: 'ASUS RoG Zephyrus',
+        price: '$ 1,269',
+        img: './img/products/list/12.png'
+    }
+];
+
+const page2 = [
     {
         id: 13,
         name: 'Acer Nitro 5',
         price: '$ 696',
-        img: './img/products/list/5.png'
+        img: './img/products/list/13.png'
     },
     {
         id: 14,
         name: 'Acer Concept 3 Ezel',
         price: '$ 1,692',
-        img: './img/products/list/6.png'
+        img: './img/products/list/14.png'
     },
     {
         id: 15,
         name: 'Acer Aspire 3 Series',
         price: '$ 549',
-        img: './img/products/list/7.png'
+        img: './img/products/list/15.png'
     },
     {
         id: 16,
         name: 'Acer Aspire 3 Series',
         price: '$ 800',
-        img: './img/products/list/8.png'
+        img: './img/products/list/16.png'
     },
 ];
 

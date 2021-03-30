@@ -118,6 +118,69 @@ const products = [
         aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
     },
     {
+        id: 6,
+        showCaseImgs: [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg"
+        ],
+        productName: 'MSI GE Series GE66 Raider Gaming Laptop',
+        rate: 4.5,
+        reviews: 21,
+        sold: 43,
+        screen: '15.6" 1920 x 1080',
+        processor: 'Intel Core i7-10875H 2.2GHz - 5.1GHz 16MB',
+        memory: '8GB (8GB x2) DDR4 2666MHz',
+        hardDrive: '1TB SSD PCIe G3X4 (2 Slots)',
+        oldPrice: '$2,399',
+        newPrice: '$2,199',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 7,
+        showCaseImgs: [
+            "1.png",
+            "2.jpg",
+            "3.jpg",
+            "4.png",
+            "5.png"
+        ],
+        productName: 'Razer Blade Gaming Laptop',
+        rate: 4.6,
+        reviews: 14,
+        sold: 22,
+        screen: '15.6" 1920 x 1080 (or 2560 x 1440)',
+        processor: 'Intel Core i7-10750H Six-Core 2.6GHz',
+        memory: '6GB GDDR6 VRAM',
+        hardDrive: '1TB SSD PCIe G3X4 (2 Slots)',
+        oldPrice: '$1,799',
+        newPrice: '$1,699',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 8,
+        showCaseImgs: [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.png"
+        ],
+        productName: 'Acer Predator Helios 300 Gaming Laptop',
+        rate: 4.8,
+        reviews: 17,
+        sold: 31,
+        screen: '15.6" 1920 x 1080',
+        processor: 'Intel Core i7-10750H six-core 2.6GHz',
+        memory: '16GB of DDR4',
+        hardDrive: '1TB SSD',
+        oldPrice: '$1,399',
+        newPrice: '$1,199',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
         id: 9,
         showCaseImgs: [
             "1.png",
@@ -126,16 +189,79 @@ const products = [
             "4.png",
             "5.png"
         ],
-        productName: 'ASUS Republic of Gamers Strix G17',
+        productName: 'ASUS Republic of Gamers Strix G17 Gaming Laptop',
+        rate: 4.9,
+        reviews: 51,
+        sold: 72,
+        screen: '17.3" 1920 x 1080 IPS Display',
+        processor: 'Ryzen 9 5900HX 8-Core 3.3GHz',
+        memory: '16GB DDR4',
+        hardDrive: '1TB M.2 PCIe SSD',
+        oldPrice: '$ 1,799',
+        newPrice: '$ 1,599',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 10,
+        showCaseImgs: [
+            "1.jpg",
+            "2.png",
+            "3.jpg",
+            "4.jpg",
+            "5.png"
+        ],
+        productName: 'MSI GF65 Thin 10UE-046 Gaming Laptop',
         rate: 4.7,
-        reviews: 69,
-        sold: 103,
-        screen: '17.3" 1920 x 1080 300Hz IPS Display',
-        processor: 'Intel Core i7-10750H 2.6GHz - 5.0GHz 12MB',
-        memory: '8GB DDR4 2933MHz',
-        hardDrive: '512GB SSD M.2 PCIE',
-        oldPrice: '$1,799.99',
-        newPrice: '$1,799.99',
+        reviews: 31,
+        sold: 46,
+        screen: '15.6" 1920 x 1080 144Hz IPS Display',
+        processor: '2.6 GHz Intel Core i7 6-Core (10th Gen)',
+        memory: '16GB DDR4 RAM',
+        hardDrive: '1TB M.2 NVMe PCIe SSD',
+        oldPrice: '$ 1,599',
+        newPrice: '$ 1,399',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 11,
+        showCaseImgs: [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.png",
+            "5.png"
+        ],
+        productName: 'MSI GS66 Stealth Gaming Laptop (Core Black)',
+        rate: 4.8,
+        reviews: 22,
+        sold: 37,
+        screen: '15.6" FHD 1920 x 1080 300 Hz Display',
+        processor: '2.2 GHz Intel Core i7 8-Core 10th Gen',
+        memory: '32GB DDR4',
+        hardDrive: '1TB NVMe PCIe M.2 SSD',
+        oldPrice: '$ 2,500',
+        newPrice: '$ 2,399',
+        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
+    },
+    {
+        id: 12,
+        showCaseImgs: [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg"
+        ],
+        productName: 'ASUS RoG Zephyrus G15 GA502IU Gaming Laptop',
+        rate: 4.8,
+        reviews: 43,
+        sold: 44,
+        screen: '15.6" 1920 x 1080 144 Hz IPS Display',
+        processor: '2.9 GHz AMD Ryzen 7 4800HS Eight-Core',
+        memory: '16GB DDR4',
+        hardDrive: '1TB NVMe PCIe M.2 SSD',
+        oldPrice: '$ 1,100',
+        newPrice: '$ 1,269',
         aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum"
     }
 ];
