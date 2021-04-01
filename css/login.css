@@ -9,232 +9,294 @@
   text-decoration: none;
 }
 
+#back-to-homepage {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    color: #4375ff;
+    transition: transform .2s ease;
+}
+
+#back-to-homepage:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .container {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    min-height: 100vh;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
 .side-img, .form-container {
-    width: 50%;
+    flex-basis: 50%;
 }
 
 .side-img img {
     width: 100%;
 }
 
-.login-form, .sign-up-form {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
+.form-container {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    /* border: 1px solid #333; */
 }
 
-.sign-up-form, #check {
+.login-form, .signup-form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: green; */
+    width: 60%;
+}
+
+#form-toggler:checked ~ .login-form, .signup-form ,#form-toggler{
     display: none;
 }
 
-#check:checked ~ .login-form {
-    display: none;
-    pointer-events: none;
+.login-form {
+    animation: SlideRightToLeft .3s ease-in-out;
 }
 
-#check:checked ~ .sign-up-form {
-    display: -webkit-box;
-    display: -ms-flexbox;
+#form-toggler:checked ~ .signup-form {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    animation: SlideRightToLeft .3s ease-in-out;
 }
 
-.policy {
-    margin: 1rem 0;
-    width: 50%;
-    text-align: center;
-    font-size: .9rem;
-}
-
-.policy a {
-    color: #e84118;
-    font-weight: 500;
-}
-
-.login-form h2,
-.sign-up-form h2 {
+.title {
     font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #1877f2;
+    margin-bottom: 1.5rem;
+    color: #4375ff;
     text-decoration: underline;
-    text-transform: capitalize;
 }
 
-.input-field,
-.submit-btn {
-    -webkit-box-shadow: 0 3px 5px rgba(104, 104, 104, 0.8);
-            box-shadow: 0 3px 5px rgba(104, 104, 104, 0.8);
-    margin: .7rem 0;
-    width: 50%;
+.input-field {
     background-color: #fff;
-    border: 2px solid #4f73d8;
-    border-radius: 30px;
-    padding: .5rem 1rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    border-radius: 20px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 2rem;
+    padding: 0 .75rem;
+    border: 2px solid #006eff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
-.submit-btn:focus {
-    outline: none;
+.input-field.raise-error {
+    border: 2px solid #fb2d16;
+}
+
+.input-field.raise-error .input-field-container i,
+.input-field.raise-error input::placeholder {
+    color: #fb2d16;
+}
+
+.input-field.raise-error .input-field-container i.warning {
+    display: block;
+    color: #fb2d16;
+}
+
+.input-field .input-field-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-msg {
+    color: #fb2d16;
+    margin: .5rem 0;
+    font-size: 15px;
 }
 
 .input-field input {
-    width: 100%;
-    padding: 0 1rem;
-    background: none;
     border: none;
+    background: none;
     outline: none;
+    width: 100%;
     height: 100%;
+    padding: 0 .75rem;
     font-size: 1.2rem;
-}
-
-.input-field input::-webkit-input-placeholder {
-    color: #2650c5;
-}
-
-.input-field input::-moz-placeholder {
-    color: #2650c5;
-}
-
-.input-field input:-ms-input-placeholder {
-    color: #2650c5;
-}
-
-.input-field input::-ms-input-placeholder {
-    color: #2650c5;
+    color: #34495e;
 }
 
 .input-field input::placeholder {
-    color: #2650c5;
+    color: #006eff;
 }
 
-.input-field label,
-.input-field i {
-    font-size: 1.2rem;
-    color: #466cd4;
-    cursor: pointer;
+.input-field.submit {
+    background-color: #006eff;
+    border-radius: 20px;
+    padding: 0;
 }
 
-.submit-btn {
-    background-color: #1877f2;
+.input-field.submit:hover {
+    filter: brightness(120%);
+}
+
+.input-field.submit input {
     color: #fff;
-    text-align: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 1.2rem;
-    -webkit-transition: .3s ease;
-    -o-transition: .3s ease;
-    transition: .3s ease;
+    font-size: 1.75rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.input-field i {
+    font-size: 1.3rem;
+    color: #006eff;
     cursor: pointer;
-    text-transform: uppercase;
 }
 
-.submit-btn:hover {
-    background-color: #005dd6;
+.input-field i.warning {
+    display: none;
 }
 
-.forgot-pass {
-    color: #0031b8;
-    margin: 1rem 0;
+.forgot-password a{
+    font-size: 1.2rem;
+    color: #006eff;
+}
+
+.register {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6a6b6b;
+}
+
+.register a {
+    color: #ff442f;
+}
+
+.switch-form {
+    margin: .5rem 0;
     font-size: 1.2rem;
 }
 
-.member {
-    color: #888888;
-    font-size: 1.2rem;
+.switch-form span {
+    color: #6a6b6b;
 }
 
-.member a {
-    color: #0031b8;
+.switch-form label {
+    color: #006eff;
 }
 
 .social-media {
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    width: 100%;
+    text-align: center;
+}
+
+.social-media h1 {
+    color: #006eff;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.sm-container {
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
 }
 
-p {
-    font-size: 1.3rem;
-    margin: 1.5rem 0;
-    color: #0065e9;
+.sm-container i {
+    font-size: 2.5rem;
+    color: #006eff;
+    transition: all .2s linear;
 }
 
-.social-media i {
+.sm-container i:nth-child(even) {
+    color: #f85e38;
+}
+
+.sm-container i:hover {
+    filter: brightness(120%);
+    transform: scale(1.1);
     cursor: pointer;
-    font-size: 3rem;
-    color: #e84118;
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    transition: all .3s ease;
 }
 
-.social-media i:nth-child(odd) {
-    color: #0b6be9;
-}
+@keyframes SlideRightToLeft {
+    from {
+        transform: translateX(200%);
+    }
 
-.social-media i:hover {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-    -webkit-filter: brightness(120%);
-            filter: brightness(120%);
+    to {
+        transform: translateX(0%);
+    }
 }
 
 @media (max-width: 769px) {
+
+    .login-form, .signup-form {
+        width: 90%;
+    }
+
+    .container{
+        justify-content: center;
+    }
+   
     .side-img {
         display: none;
     }
 
     .form-container {
+        flex-basis: 100%;
+    }
+
+    .input-field, .social-media {
+        width: 80%;
+    }
+}
+
+@media (max-width: 414px) {
+    .error-msg {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .input-field, .social-media {
         width: 100%;
     }
 
-    .input-field, .policy, .social-media {
-        width: 80%;
+    #back-to-homepage {
+        top: 5px;
+        left: 5px;
     }
 
-    .member,.submit-btn {
-        width: 60%;
+    .form-container {
+        margin-top: 4rem;
+        flex-basis: 90%;
+    }
+
+    .register {
+        font-size: 1rem;
+    }
+
+    .switch-form {
+        font-size: 1rem;
         text-align: center;
     }
 
-    p {
-        margin: 1rem 0;
-        font-size: 1rem;
+    .social-media h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .error-msg {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 280px) {
+    .switch-form {
+        font-size: 1.25rem;
+        text-align: center;
     }
 }

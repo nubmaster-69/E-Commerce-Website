@@ -15,96 +15,120 @@
 
     <div class="container">
 
+        <i class="fas fa-arrow-circle-left" id="back-to-homepage"></i>
+
         <div class="side-img">
-            <img src="./img/background/side-img-6.png">
+            <img src="./img/background/side-img-4.png" alt="">
         </div>
 
-        <div class="form-container">
+        <form class="form-container">
 
-            <input type="checkbox" id="check">
+            <input type="checkbox" name="" id="form-toggler">
 
-            <form class="login-form" required>
-
-                <h2>Log in</h2>
-
-                <div class="input-field">
-                    <label for="user-sign-in" class="fas fa-user"></label>
-                    <input type="text" id="user-sign-in" placeholder="Username" required autofocus autocomplete="off">
-                </div>
+            <div class="login-form">
+                <h2 class="title">Login</h2>
 
                 <div class="input-field">
-                    <label for="sign-in" class="fas fa-lock"></label>
-                    <input type="password" id="sign-in" placeholder="Password" required>
-                    <i onclick="showPasswordSignIn()" id="sign-in-icon" class="fas fa-eye-slash"></i>
+                    <div class="input-field-container">
+                        <label for="username"><i class="fas fa-user"></i></label>
+                        <input type="text" name="username" id="username" placeholder="Username">
+                        <i class="fas fa-exclamation-circle warning"></i>
+                    </div>
+                    <div class="error-msg"></div>
                 </div>
 
-                <button type="submit" class="submit-btn">log in</button>
-
-                <a href="#" class="forgot-pass">Forgotten Password?</a>
-
-                <div class="member">
-                    Not a member yet?
-                    <a href="#" onclick="formToggle()">Sign up now!</a>
-
+                <div class="input-field">
+                    <div class="input-field-container">
+                        <label for="password"><i class="fas fa-lock"></i></label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        <i class="fas fa-eye-slash" id="sp-login"></i>
+                    </div>
+                    <div class="error-msg"></div>
                 </div>
 
-                <p>Or With</p>
+                <div class="input-field submit">
+                    <input type="button" value="Log in" name="submit" id="btnLogin">
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgotten Password?</a>
+                </div>
+
+                <div class="switch-form">
+                    <span>Not A Member?</span>
+                    <label for="form-toggler">Sign Up Now!</label>
+                </div>
 
                 <div class="social-media">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-google-plus-square"></i>
-                    <i class="fab fa-twitter"></i>
+                    <h1>Or With:</h1>
+
+                    <div class="sm-container">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-google-plus-square"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
                 </div>
+            </div>
 
-            </form>
-
-            <form class="sign-up-form" required>
-
-                <h2>Sign Up</h2>
+            <div class="signup-form">
+                <h2 class="title">Sign Up</h2>
 
                 <div class="input-field">
-                    <label for="user-sign-up" class="fas fa-user"></label>
-                    <input type="text" id="user-sign-up" placeholder="Username" required autofocus autocomplete="off">
+                    <div class="input-field-container">
+                        <label for="username-signup"><i class="fas fa-user"></i></label>
+                        <input type="text" name="username-signup" id="username-signup" placeholder="Username">
+                        <i class="fas fa-exclamation-circle warning"></i>
+                    </div>
+                    <div class="error-msg"></div>
                 </div>
 
                 <div class="input-field">
-                    <label for="sign-up" class="fas fa-lock"></label>
-                    <input type="password" id="sign-up" placeholder="Password" required>
-                    <i onclick="showPasswordSignUp()" id="sign-up-icon" class="fas fa-eye-slash"></i>
-
+                    <div class="input-field-container">
+                        <label for="password-signup"><i class="fas fa-lock"></i></label>
+                        <input type="password" name="password" id="password-signup" placeholder="Password">
+                        <i class="fas fa-eye-slash" id="sp-signup"></i>
+                    </div>
+                    <div class="error-msg"></div>
                 </div>
 
                 <div class="input-field">
-                    <label for="sign-up-confirm" class="fas fa-lock"></label>
-                    <input type="password" id="sign-up-confirm" placeholder="Confirm Password" required>
-                    <!-- <i onclick="showPasswordSignUp()" id="sign-up-icon" class="fas fa-eye-slash"></i> -->
+                    <div class="input-field-container">
+                        <label for="password-confirm"><i class="fas fa-lock"></i></label>
+                        <input type="password" name="password" id="password-confirm" placeholder="Confirm Password">
+                        <i class="fas fa-exclamation-circle warning"></i>
+                    </div>
+                    <div class="error-msg"></div>
                 </div>
 
-                <button type="submit" class="submit-btn" onclick="getUserNameAndPassword()">Sign up</button>
-
-                <div class="policy">
-                    <span>By registering, you agree to our
-                        <a href="#">terms of service</a> & <a href="#">privacy policy.</a>
-                    </span>
+                <div class="input-field submit">
+                    <input type="button" value="submit" name="submit" id="btnSignup">
                 </div>
 
-                <div class="member">
-                    Already a member?
-                    <a href="#" onclick="formToggle()">Log in now!</a>
+                <div class="register">
+                    By registering, you agree to our
+                    <br>
+                    <a href="#">service</a>
+                    &
+                    <a href="#">privacy policy.</a>
                 </div>
 
-                <p>Or With</p>
+                <div class="switch-form">
+                    <span>Already A Member?</span>
+                    <label for="form-toggler" href="#" id="switch-form-toggle">Log in Now!</label>
+                </div>
 
                 <div class="social-media">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-google-plus-square"></i>
-                    <i class="fab fa-twitter"></i>
+                    <h1>Or With:</h1>
+
+                    <div class="sm-container">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-google-plus-square"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
                 </div>
+            </div>
 
-            </form>
-
-        </div>
-
+        </form>
     </div>
 
     <script src="./js/login.js"></script>
