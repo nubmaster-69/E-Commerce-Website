@@ -45,22 +45,6 @@ showPassSignup.addEventListener('click', () => {
     }
 });
 
-passSignup.addEventListener('blur', () => {
-    let pass = passSignup.value;
-    let passwordRegex = /(?=.*\d)(?=.*[A-Z])(?=\S+$).{8}/
-
-    let parentElem = passSignup.parentElement.parentElement;
-
-    if (!passwordRegex.test(pass)) {
-        parentElem.classList.add('raise-error')
-        parentElem.lastElementChild.innerText = 'At least 8 characters, a digit and an uppercase'
-    }
-    else {
-        parentElem.classList.remove('raise-error')
-        parentElem.lastElementChild.innerText = ''
-    }
-});
-
 btnLogin.addEventListener('click', () => {
     let userName = usernameLogin.value;
     let pass = passLogin.value;
@@ -75,7 +59,12 @@ btnLogin.addEventListener('click', () => {
         return user.username === userName;
     })
 
-    if (!isCorrectUserName) {
+
+    if (userName === '') {
+        parentUserElem.classList.add('raise-error');
+        parentUserElem.lastElementChild.innerText = 'Please fill in this field!';
+    }
+    else if (!isCorrectUserName) {
         parentUserElem.classList.add('raise-error');
         parentUserElem.lastElementChild.innerText = 'Username not found!';
     }
@@ -84,7 +73,12 @@ btnLogin.addEventListener('click', () => {
         parentUserElem.lastElementChild.innerText = '';
     }
 
-    if (!isCorrectPass) {
+
+    if (pass === '') {
+        parentElem.classList.add('raise-error');
+        parentElem.lastElementChild.innerText = 'Please fill in this field!';
+    }
+    else if (!isCorrectPass) {
         parentElem.classList.add('raise-error');
         parentElem.lastElementChild.innerText = 'Incorrect Password!';
     }
@@ -96,13 +90,37 @@ btnLogin.addEventListener('click', () => {
 
 });
 
+passSignup.addEventListener('blur', () => {
+    let pass = passSignup.value;
+    let passwordRegex = /(?=.*\d)(?=.*[A-Z])(?=\S+$).{8}/
+
+    let parentElem = passSignup.parentElement.parentElement;
+
+    if (pass === '') {
+        parentElem.classList.add('raise-error')
+        parentElem.lastElementChild.innerText = "Please fill in this field!"
+    }
+    else if (!passwordRegex.test(pass)) {
+        parentElem.classList.add('raise-error')
+        parentElem.lastElementChild.innerText = 'At least 8 characters, a digit and an uppercase'
+    }
+    else {
+        parentElem.classList.remove('raise-error')
+        parentElem.lastElementChild.innerText = ''
+    }
+});
+
 confirmPass.addEventListener('blur', () => {
     let pass = passSignup.value;
     let cfPass = confirmPass.value;
 
     let parentElem = confirmPass.parentElement.parentElement;
 
-    if (pass != cfPass || pass === '') {
+    if (cfPass === '') {
+        parentElem.classList.add('raise-error')
+        parentElem.lastElementChild.innerText = "Please fill in this field!";
+    }
+    else if (pass != cfPass) {
         parentElem.classList.add('raise-error')
         parentElem.lastElementChild.innerText = "Password doesn't match!";
     }
@@ -112,21 +130,17 @@ confirmPass.addEventListener('blur', () => {
     }
 });
 
-// btnSignup.addEventListener('click', () => {
-//     let userName = usernameSignup.value;
-//     let pass = passSignup.value;
-//     let cfpass = confirmPass.value;
+usernameSignup.addEventListener('blur', () => {
+    let userName = usernameSignup.value;
+    let parentElem = usernameSignup.parentElement.parentElement;
 
-//     let isCorrect = users.some((user) => {
-//         return user.username === userName && user.password === pass;
-//     })
+    if (userName === '') {
+        parentElem.classList.add('raise-error');
+        parentElem.lastElementChild.innerText = 'Please fill in this field!';
+    }
+    else {
+        parentElem.classList.remove('raise-error');
+        parentElem.lastElementChild.innerText = '';
+    }
 
-//     if (!isCorrect && pass === cfpass) {
-//         users.push({
-//             username: userName,
-//             password: pass
-//         });
-
-//         window.location.href = "./index.html"
-//     }
-// });
+});

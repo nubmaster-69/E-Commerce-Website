@@ -111,6 +111,8 @@ const nextPage = document.querySelector('.page-next');
 const showcaseImage = document.getElementById('showcase-img');
 const slideImages = document.querySelectorAll('.slide-img');
 
+const contact = document.querySelector('.contact');
+
 var currentPage = 1;
 
 // Uncomment this function only when needed
@@ -131,10 +133,13 @@ menuToggler.addEventListener('click', () => {
 
 // Sticky navbar after scroll
 window.addEventListener('scroll', () => {
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 0);
+    document.querySelector('header').classList.toggle('sticky', window.scrollY > 0);
 });
 
+// Sticky contact button
+window.addEventListener('scroll', () => {
+    contact.classList.toggle('active', window.scrollY > 200);
+})
 
 // Landing page - change color and image
 slideImages.forEach(slideImg => {

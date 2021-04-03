@@ -13,21 +13,21 @@
 
 <body>
 
-    <div class="landing-page">
+    <div class="landing-page" id="top">
 
-        <header id="top">
+        <header>
             <nav class="nav-bar">
                 <a href="./index.html" class="logo">LAP4U.</a>
 
                 <ul class="nav-links">
                     <li class="nav-link">
-                        <a href="#"><i class="fas fa-shopping-cart"></i> My Cart</a>
-                    </li>
-                    <li class="nav-link">
                         <a href="./login.html"><i class="fas fa-user"></i> Account</a>
                     </li>
                     <li class="nav-link">
-                        <a href="#l-product"><i class="fas fa-layer-group"></i> Products</a>
+                        <a href="#"><i class="fas fa-shopping-cart"></i> My Cart</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#"><i class="fas fa-heart"></i> Wish List</a>
                     </li>
 
                 </ul>
@@ -86,6 +86,22 @@
 
         </div>
     </section>
+
+    <section class="products product-all">
+        <h1 class="intro" id="l-product">Our Products</h1>
+
+        <div class="wrapper product-list">
+        </div>
+    </section>
+
+    <div class="pagination">
+        <a class="page-prev"><i class="fas fa-angle-left"></i></a>
+        <a class="page-num active">1</a>
+        <a class="page-num">2</a>
+        <a class="page-num">3</a>
+        <a class="page-num">4</a>
+        <a class="page-next"><i class="fas fa-angle-right"></i></a>
+    </div>
 
     <section class="products product-new">
         <h1 class="intro">Popular Products</h1>
@@ -146,22 +162,6 @@
         </div>
     </section>
 
-    <section class="products product-all">
-        <h1 class="intro" id="l-product">All Products</h1>
-
-        <div class="wrapper product-list">
-        </div>
-    </section>
-
-    <div class="pagination">
-        <a class="page-prev"><i class="fas fa-angle-left"></i></a>
-        <a class="page-num active">1</a>
-        <a class="page-num">2</a>
-        <a class="page-num">3</a>
-        <a class="page-num">4</a>
-        <a class="page-next"><i class="fas fa-angle-right"></i></a>
-    </div>
-
     <footer>
         <div class="wrapper">
             <div class="footer-detail">
@@ -216,6 +216,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Online contact -->
+
+    <div class="contact" title="Online Support">
+        <i class="fab fa-facebook-messenger" id="online-contact"></i>
+    </div>
 
     <script src="./js/index.js"></script>
 </body>
