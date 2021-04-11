@@ -19,15 +19,28 @@
             <nav class="nav-bar">
                 <a href="./index.html" class="logo">LAP4U.</a>
 
+
                 <ul class="nav-links">
-                    <li class="nav-link">
-                        <a href="./login.html"><i class="fas fa-user"></i> Account</a>
-                    </li>
-                    <li class="nav-link">
+                    <li class="nav-link" id="my-cart">
                         <a href="#"><i class="fas fa-shopping-cart"></i> My Cart</a>
+                        <span id="cart-amount">0</span>
                     </li>
+
                     <li class="nav-link">
-                        <a href="#"><i class="fas fa-heart"></i> Wish List</a>
+                        <a href="#"><i class="fas fa-heart" id="wish-list"></i> Wish List</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#" id="my-account">
+                            <div class="profile">
+                                <img src="./img/profile/mtl.jpg" alt="avatar">
+                                <span id="username"></span>
+                            </div>
+
+                            <div class="no-account">
+                                <i class="fas fa-user"></i> Account
+                            </div>
+                        </a>
                     </li>
 
                 </ul>
@@ -73,7 +86,13 @@
         <div class="wrapper items">
 
             <div class="item-feature featured-1">
-                <img src="./img/products/featured/main.jpg" alt="">
+                <div class="slider">
+                    <img src="./img/products/featured/main.jpg" class="slide" alt="">
+                    <img src="./img/products/featured/side-pic-a.jpg" class="slide" alt="">
+                    <img src="./img/products/featured/side-pic-b.jpg" class="slide" alt="">
+                </div>
+                <button class="btn-slide" id="prevSlide"><i class="fas fa-angle-left"></i></button>
+                <button class="btn-slide" id="nextSlide"><i class="fas fa-angle-right"></i></button>
             </div>
 
             <div class="item-feature featured-2">
@@ -103,9 +122,9 @@
         <a class="page-next"><i class="fas fa-angle-right"></i></a>
     </div>
 
-    <section class="products product-new">
-        <h1 class="intro">Popular Products</h1>
-        <div class="wrapper latest-products">
+    <section class="products product-comingsoon">
+        <h1 class="intro">Coming soon</h1>
+        <div class="wrapper comingsoon-products">
 
             <div class="img-card">
                 <div class="img-container">
@@ -222,6 +241,20 @@
     <div class="contact" title="Online Support">
         <i class="fab fa-facebook-messenger" id="online-contact"></i>
     </div>
+
+    <div class="contact">
+        <div class="support-message">
+            <p>got problem? Chat now!</p>
+            <i class="fas fa-minus close"></i>
+        </div>
+    </div>
+
+    <!-- <div class="contact">
+        <div class="support-call">
+            <p>19001580</p>
+            <i class="fas fa-minus close"></i>
+        </div>
+    </div> -->
 
     <script src="./js/index.js"></script>
 </body>

@@ -103,26 +103,37 @@ const page2 = [
 const menuToggler = document.querySelector('.menu-toggler');
 const navLinks = document.querySelector('.nav-links');
 const productContainer = document.querySelector('.product-list');
-var products;
-var toFavList;
 const pageNum = document.querySelectorAll('.page-num');
 const prevPage = document.querySelector('.page-prev');
 const nextPage = document.querySelector('.page-next');
 const showcaseImage = document.getElementById('showcase-img');
 const slideImages = document.querySelectorAll('.slide-img');
+const navBar = document.querySelector('.nav-bar');
+const myAccount = document.querySelector('#my-account');
+const contact = document.querySelectorAll('.contact');
+const cartAmount = document.querySelector('#cart-amount');
+const closePopupMsgBtns = document.querySelectorAll(".close");
+const sliderContainer = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide')
+const btnNextSlide = document.querySelector('#nextSlide');
+const btnPrevSlide = document.querySelector('#prevSlide');
 
-const contact = document.querySelector('.contact');
-
+var featuredContainer = document.querySelector('.featured-1');
+var img_width = 800;
+var img_height = 400;
+var slideIdx = 0;
 var currentPage = 1;
+var products;
+var toFavList;
+var toCart;
 
-// Uncomment this function only when needed
-// let idx = 0, imagesLength = slideImages.length;
+// Dont remove this function
+// var idx = 0, imagesLength = slideImages.length;
 // setInterval(function autoSlide() {
 //     idx++;
 //     idx = (idx >= imagesLength ? 0 : idx);
 //     changeColorAndImg(slideImages[idx].getAttribute('src'), slideImages[idx].getAttribute('alt'));
 // }, 3500);
-
 
 // Menu toggle
 menuToggler.addEventListener('click', () => {
@@ -130,6 +141,11 @@ menuToggler.addEventListener('click', () => {
     menuToggler.classList.toggle('menu-close');
 });
 
+closePopupMsgBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.currentTarget.parentElement.style.display = 'none'
+    })
+})
 
 // Sticky navbar after scroll
 window.addEventListener('scroll', () => {
@@ -138,7 +154,9 @@ window.addEventListener('scroll', () => {
 
 // Sticky contact button
 window.addEventListener('scroll', () => {
-    contact.classList.toggle('active', window.scrollY > 200);
+    contact.forEach(idx => {
+        idx.classList.toggle('active', window.scrollY > 200);
+    })
 })
 
 // Landing page - change color and image
@@ -166,7 +184,7 @@ let createItem = (idx) => {
     <div class="detail">
         <i class="far fa-heart to-fav-list"></i>
         <span class="price">${idx.price}</span>
-        <i class="fas fa-cart-plus add-to-cart"></i>
+        <i class="fas fa-cart-plus add-to-cart to-cart"></i>
     </div>
     `
     productContainer.append(item);
@@ -194,9 +212,27 @@ let getProductDesc = (list) => {
                 item.classList.replace('fas', 'far');
         });
     });
+
+    toCart = document.querySelectorAll('.to-cart');
+    toCart.forEach(item => {
+        item.addEventListener('click', () => {
+            cartAmount.innerText = parseInt(cartAmount.innerText) + 1;
+        });
+    })
 }
 
 window.onload = getProductDesc(page1);
+
+window.onload = () => {
+    let curUrl = new URLSearchParams(window.location.search).get('account');
+    if (curUrl !== null) {
+        navBar.classList.toggle('active');
+        document.querySelector('#username').innerText = curUrl;
+        myAccount.setAttribute('href', '#')
+    }
+    else
+        myAccount.setAttribute('href', './login.html')
+}
 
 //  Pagination
 pageNum.forEach(page => {
@@ -251,3 +287,51 @@ function createPage(pageIdx) {
     pageNum[pageIdx - 1].classList.add('active');
     // window.location.href = "./index.html#l-product";
 }
+
+function updateSize() {
+    img_width = featuredContainer.clientWidth;
+    img_height = featuredContainer.clientHeight;
+
+    slides.forEach(slide => {
+        slide.style.width = `${img_width}px`;
+        slide.style.height = `${img_height}px`;
+    });
+
+    sliderContainer.style.width = `${slides.length * img_width}px`;
+    sliderContainer.style.height = `${img_height}px`;
+}
+
+window.addEventListener('resize', updateSize);
+
+function nextSlide() {
+    updateSize();
+    if (slideIdx < slides.length - 1)
+        slideIdx++;
+    else
+        slideIdx = 0;
+    slideTransform();
+}
+
+function prevSlide() {
+    updateSize();
+    if (slideIdx === 0)
+        slideIdx = slides.length - 1;
+    else
+        slideIdx--;
+    slideTransform();
+}
+
+function slideTransform() {
+    sliderContainer.style.transform = `translateX(-${slideIdx * img_width}px)`;
+}
+
+btnNextSlide.addEventListener('click', () => {
+    nextSlide();
+});
+btnPrevSlide.addEventListener('click', () => {
+    prevSlide();
+});
+
+setInterval(() => {
+    nextSlide();
+}, 4000);

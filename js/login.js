@@ -1,7 +1,8 @@
 const users = [
     {
         username: 'harry123',
-        password: 'Harry123'
+        password: 'Harry123',
+        profileName: 'Tieu Linh'
     }
 ]
 
@@ -85,9 +86,8 @@ btnLogin.addEventListener('click', () => {
     else {
         parentElem.classList.remove('raise-error');
         parentElem.lastElementChild.innerText = '';
-        window.location.href = "./index.html";
+        window.location.href = `./index.html?account=${users[0]['profileName']}`;
     }
-
 });
 
 passSignup.addEventListener('blur', () => {
@@ -142,5 +142,4 @@ usernameSignup.addEventListener('blur', () => {
         parentElem.classList.remove('raise-error');
         parentElem.lastElementChild.innerText = '';
     }
-
 });
