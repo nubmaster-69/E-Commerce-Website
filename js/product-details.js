@@ -358,7 +358,7 @@ function createContent(idx) {
                 </ul>
             </div>
 
-            <a href="#more-detail" class="btn-overview">More Detail</a>
+            <a href="#spec" class="btn-overview">More Detail</a>
         </div>
 
         <div class="product__price">
