@@ -18,6 +18,7 @@
   --dark-gray: #dbdbdb;
   --primary-color: #ff5429;
   --primary-color-dark: #ff3300;
+   --text-color: #f85d24;
 }
 
 
@@ -400,6 +401,7 @@ header .menu-toggler {
 
 #more-detail {
   margin: 2rem;
+  text-align: justify;
 }
 
 #more-detail h3{
@@ -412,7 +414,6 @@ header .menu-toggler {
 
 .spec h2 {
   font-size: 2rem;
-  
 }
 
 .spec table {
@@ -422,15 +423,115 @@ header .menu-toggler {
 }
 
 .spec table tr:nth-child(odd) {
-  background: #d6d6d6;
+  background: #e2e2e2;
 }
 
 .spec table tr, .spec table td {
-  border: 1px solid #7c7c7c;
+  border: 1.5px solid #7c7c7c;
 }
 
 .spec table td {
   padding: .5rem;
+}
+
+/* Sponsor */
+.sponsor {
+  margin: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sponsor img {
+  max-width: 150px;
+  width: 20%;
+  transition: transform .3s ease;
+}
+
+.sponsor img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* footer */
+footer {
+  font-size: 1.2rem;
+  background-color: #42454d;
+  color: #fff;
+}
+
+.footer-detail {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.page-logo {
+  cursor: pointer;
+  border: 2px solid var(--text-color);
+  border-radius: 20px 0 20px 0;
+  padding: 0.25rem 2rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-size: 2.5rem;
+}
+
+.page-address {
+  -ms-grid-column-align: end;
+  justify-self: end;
+}
+
+.page-address ul {
+  list-style: none;
+}
+
+.page-address ul li {
+  margin: 1rem 0;
+}
+
+.page-address a {
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.page-address p {
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.page-address a,
+.copy-right a {
+  color: #fff;
+}
+
+.page-sm i {
+  font-size: 2rem;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.page-sm i:hover,
+.page-address a:hover {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.page-sm i:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.copy-right {
+  text-align: center;
+}
+
+.copy-right span {
+  color: var(--text-color);
 }
 
 @media (max-width: 769px) {
@@ -496,6 +597,13 @@ header .menu-toggler {
     .quantity-info input {
       width: 60px;
     }
+
+    .footer-detail {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
 
 }
 

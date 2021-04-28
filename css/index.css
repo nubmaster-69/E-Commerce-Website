@@ -87,20 +87,6 @@
   align-items: center;
   justify-content: center;
 }
-/* 
-.contact.active .support-call {
-  position: fixed;
-  bottom: 9.5rem;
-  right: 1rem;
-  background: #fff;
-  color: var(--primary-color);
-  padding: .5rem .75rem;
-  border-radius: 20px;
-  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  text-transform: capitalize;
-  animation: slideRight .5s ease;
-} */
 
 /* ==Global wrapper== */
 .wrapper {
@@ -710,6 +696,7 @@ section .intro {
 .pagination {
   text-align: center;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 .pagination .page-num,
