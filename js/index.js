@@ -100,8 +100,8 @@ const page2 = [
     },
 ];
 
-const menuToggler = document.querySelector('.menu-toggler');
-const navLinks = document.querySelector('.nav-links');
+const menuToggler = $('.menu-toggler')
+const navLinks = $('.nav-links')
 const productContainer = document.querySelector('.product-list');
 const pageNum = document.querySelectorAll('.page-num');
 const prevPage = document.querySelector('.page-prev');
@@ -136,10 +136,12 @@ var toCart;
 // }, 3500);
 
 // Menu toggle
-menuToggler.addEventListener('click', () => {
-    navLinks.classList.toggle('menu-active');
-    menuToggler.classList.toggle('menu-close');
-});
+$(document).ready(() => {
+    menuToggler.click(() => {
+        navLinks.toggleClass('menu-active')
+        menuToggler.toggleClass('menu-close')
+    })
+})
 
 closePopupMsgBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
