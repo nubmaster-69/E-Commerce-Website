@@ -125,7 +125,6 @@ var slideIdx = 0;
 var currentPage = 1;
 var products;
 var toFavList;
-var toCart;
 
 // Dont remove this function
 // var idx = 0, imagesLength = slideImages.length;
@@ -184,9 +183,8 @@ let createItem = (idx) => {
         <p class="product-name">${idx.name}</p>
     </div>
     <div class="detail">
-        <i class="far fa-heart to-fav-list"></i>
         <span class="price">${idx.price}</span>
-        <i class="fas fa-cart-plus add-to-cart to-cart"></i>
+        <i class="far fa-heart to-fav-list"></i>
     </div>
     `
     productContainer.append(item);
@@ -214,13 +212,6 @@ let getProductDesc = (list) => {
                 item.classList.replace('fas', 'far');
         });
     });
-
-    toCart = document.querySelectorAll('.to-cart');
-    toCart.forEach(item => {
-        item.addEventListener('click', () => {
-            cartAmount.innerText = parseInt(cartAmount.innerText) + 1;
-        });
-    })
 }
 
 window.onload = getProductDesc(page1);
@@ -287,7 +278,9 @@ function createPage(pageIdx) {
     }
 
     pageNum[pageIdx - 1].classList.add('active');
-    // window.location.href = "./index.html#l-product";
+    setTimeout(() => {
+        window.location.href = "./index.html#l-product";
+    }, 100)
 }
 
 function updateSize() {
