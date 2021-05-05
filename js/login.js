@@ -1,11 +1,3 @@
-const users = [
-    {
-        username: 'harry123',
-        password: 'Harry123',
-        profileName: ''
-    }
-]
-
 const backToHomePage = document.querySelector('#back-to-homepage');
 
 const usernameLogin = document.querySelector('#username');
@@ -86,7 +78,7 @@ btnLogin.addEventListener('click', () => {
     else {
         parentElem.classList.remove('raise-error');
         parentElem.lastElementChild.innerText = '';
-        window.location.href = `./index.html?account=${users[0]['profileName']}`;
+        window.location.href = `./index.html`;
     }
 });
 

@@ -4,11 +4,15 @@ const showCase = document.querySelector('.showcase');
 const content = document.querySelector('.content');
 const moreDetail = document.querySelector('#more-detail');
 const specs = document.querySelector('#spec');
+const myCart = document.querySelector('#my-cart');
+const cartItem = document.querySelector('#mycart-item')
+const cartAmount = document.querySelector('#cart-amount')
 
 var mainImgSlide;
 var imgSlide;
 var btnIncrease;
 var btnDecrease;
+var btnToCart;
 var quantity;
 var curQuantity = 1;
 
@@ -20,8 +24,12 @@ const products = [
             "2.jpg",
             "3.jpg",
             "4.jpg",
-            "5.jpg"
+            "5.jpg",
+            "6.jpg",
+            "7.jpeg",
+            "8.jpeg",
         ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
         productName: 'MSI GE66 DragonShield 10SF 483VN',
         brand: 'MSI',
         rate: 4.9,
@@ -33,7 +41,6 @@ const products = [
         hardDrive: '1 TB NVMe PCIe Gen3x4',
         oldPrice: '$2,700',
         newPrice: '$2,600',
-        aboutProduct: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harumLorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harumLorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harumLorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum",
         gpu: 'NVIDIA GeForce GTX 1650 4GB GDDR6 + Intel UHD Graphics',
         connection: 'Killer ax Wi-Fi + Bluetooth v5.1',
         keyBoard: 'RGB Steelseries',
@@ -47,8 +54,12 @@ const products = [
             "2.jpg",
             "3.jpg",
             "4.jpg",
-            "5.png"
+            "5.png",
+            "8.jpg",
+            "10.jpg",
+            "11.jpg",
         ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
         productName: 'MSI 15.6" Creator Series Creator 15 Multi-Touch',
         brand: 'MSI',
         rate: 4.7,
@@ -74,8 +85,12 @@ const products = [
             "2.jpg",
             "3.jpg",
             "4.png",
-            "5.png"
+            "5.png",
+            "10.jpg",
+            "8.jpg",
+            "9.jpg",
         ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
         productName: 'MSI GL75 Leopard',
         brand: 'MSI',
         rate: 4.5,
@@ -339,21 +354,36 @@ const products = [
     }
 ];
 
+// loadProductDetail();
 var loadProductDetail = () => {
     let curProductID = new URLSearchParams(window.location.search).get('product');
     showCase.append(createShowCase(curProductID));
     content.append(createContent(curProductID));
-    moreDetail.append(createMoreDetail(curProductID));
     specs.append(getSpecifications(curProductID))
+    moreDetail.append(getProductDetail(curProductID))
+    loadMyCart()
 
     mainImgSlide = document.querySelectorAll('.main-img');
     imgSlide = document.querySelectorAll('.img-slide');
     btnIncrease = document.querySelector('.btn-increase');
     btnDecrease = document.querySelector('.btn-decrease');
+    btnToCart = document.querySelector('.btn-to-cart');
     quantity = document.querySelector('#quantity');
 }
 
-// loadProductDetail();
+function loadMyCart() {
+    let items = Object.keys(localStorage)
+
+    if (items.length > 0) {
+        cartAmount.textContent = items.length
+        myCart.classList.replace('no-items', 'have-items')
+    }
+
+    for (i of items) {
+        cartItem.prepend(createMyCartItem(i))
+    }
+}
+
 function createShowCase(idx) {
     let showCaseDiv = document.createElement('div');
     showCaseDiv.innerHTML =
@@ -477,18 +507,7 @@ function createContent(idx) {
     return contentDiv;
 }
 
-function createMoreDetail(idx) {
-    let detailDiv = document.createElement('div');
-
-    detailDiv.innerHTML =
-        `
-    <h3>About This Product:</h3>
-    <p>${products[idx - 1]['aboutProduct']}</p>
-    `
-    return detailDiv;
-}
-
-window.onload = loadProductDetail();
+window.loadProductDetail();
 
 imgSlide.forEach(img => {
     img.addEventListener('click', (e) => {
@@ -528,11 +547,53 @@ btnDecrease.addEventListener('click', () => {
     quantityChange();
 });
 
+btnToCart.addEventListener('click', () => {
+    let curProductID = new URLSearchParams(window.location.search).get('product');
+    myCart.classList.replace('no-items', 'have-items')
+
+    let temp = localStorage.getItem('item-' + curProductID)
+
+    if (temp != null)
+        localStorage.setItem('item-' + curProductID, `${products[curProductID - 1]['productName']};${parseInt(temp.split(';')[1]) + 1};
+        ${products[curProductID - 1]['showCaseImgs'][0]}`)
+    else
+        localStorage.setItem('item-' + curProductID, `${products[curProductID - 1]['productName']};${1};
+        ${products[curProductID - 1]['showCaseImgs'][0]}`)
+
+    temp = localStorage.getItem('item-' + curProductID)
+    let quan = temp.split(';')[1]
+
+    if (quan == 1) {
+        cartItem.prepend(createMyCartItem('item-' + curProductID))
+        cartAmount.textContent = Object.keys(localStorage).length
+    }
+    else
+        updateQuantity(curProductID, quan)
+});
+
+function createMyCartItem(idx) {
+    let li = document.createElement('li');
+
+    li.setAttribute('id', 'item' + idx.split('-')[1])
+
+    let items = localStorage.getItem(idx).split(';');
+
+    li.innerHTML =
+        `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
+        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">X${items[1]}</span></span>
+        <i class="fas fa-times my-cart-remove"></i>`
+    return li;
+}
+
+function updateQuantity(idx, newQuan) {
+    document.querySelector(`#mycart-item li#item${idx} #cart-item_quan`).textContent = `X${newQuan}`
+}
+
 function getSpecifications(idx) {
     let table = document.createElement('table');
-    table.setAttribute('cellpadding','0');
-    table.setAttribute('cellspacing','0');
-    table.innerHTML =  `
+    table.setAttribute('cellpadding', '0');
+    table.setAttribute('cellspacing', '0');
+    table.innerHTML = `
             <tr>
               <td>Brand</td>
               <td>${products[idx - 1]['brand']}</td>
@@ -595,9 +656,32 @@ function getSpecifications(idx) {
     return table;
 }
 
+function getProductDetail(idx) {
+
+    let wrapper = document.createElement('div');
+
+    wrapper.innerHTML = `
+        <h3>About this product:</h3>
+        <img src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][5]}"/>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!
+        <br>
+        <br>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!
+        </p>
+        <img src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][6]}"/>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!</p>
+        <img src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][7]}"/>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!</p>
+        <h3>Quick Review:</h3>
+        <iframe ${products[idx - 1]['video']}></iframe>
+    `
+    return wrapper
+}
+
 // Menu toggle 
 $(document).ready(() => {
-    menuToggler.click( () => {
+    menuToggler.click(() => {
         navLinks.toggleClass('menu-active')
         menuToggler.toggleClass('menu-close')
     })

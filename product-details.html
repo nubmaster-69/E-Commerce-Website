@@ -9,6 +9,7 @@
   <link rel="icon" href="./img/page-icon/home.png">
   <link rel="stylesheet" href="./fontawesome/css/all.css">
   <script src="./libs/jquery.js"></script>
+  <script src="./js/product-list.js"></script>
   <title>Product Details</title>
 </head>
 
@@ -26,8 +27,14 @@
           <li class="nav-link">
             <a href="./index.html#l-product"><i class="fas fa-laptop"></i> Products</a>
           </li>
-          <li class="nav-link">
-            <a href="#"><i class="fas fa-shopping-cart"></i> My Cart</a>
+
+          <li class="nav-link my-cart no-items" id="my-cart">
+            <a href="#" id="cart-amount-container"><i class="fas fa-shopping-cart"></i> My Cart
+              <span id="cart-amount">0</span></a>
+
+            <ul id="mycart-item">
+              <a href="./mycart.html" id="my-cart-view">View Cart</a>
+            </ul>
           </li>
 
         </ul>
@@ -44,12 +51,12 @@
     <div class="content"></div>
   </div>
 
-  <div id="more-detail"></div>
-
   <div class="spec" id="spec">
     <h2>Specifications:</h2>
 
   </div>
+
+  <div id="more-detail"></div>
 
   <section class="sponsor">
     <img src="./img/Sponsor/acer.png" alt="">
@@ -114,6 +121,7 @@
       </div>
     </div>
   </footer>
+
 
   <script src="./js/product-details.js"></script>
 </body>

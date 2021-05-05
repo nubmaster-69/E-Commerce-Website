@@ -118,6 +118,9 @@ const slides = document.querySelectorAll('.slide')
 const btnNextSlide = document.querySelector('#nextSlide');
 const btnPrevSlide = document.querySelector('#prevSlide');
 
+const myCart = document.querySelector('#my-cart');
+const cartItem = document.querySelector('#mycart-item')
+
 var featuredContainer = document.querySelector('.featured-1');
 var img_width = 800;
 var img_height = 400;
@@ -214,18 +217,11 @@ let getProductDesc = (list) => {
     });
 }
 
-window.onload = getProductDesc(page1);
 
-window.onload = () => {
-    let curUrl = new URLSearchParams(window.location.search).get('account');
-    if (curUrl !== null) {
-        navBar.classList.toggle('active');
-        document.querySelector('#username').innerText = curUrl;
-        myAccount.setAttribute('href', '#')
-    }
-    else
-        myAccount.setAttribute('href', './login.html')
-}
+window.addEventListener('load', () => {
+    window.onload = getProductDesc(page1);
+    window.onload = loadMyCart();
+})
 
 //  Pagination
 pageNum.forEach(page => {
@@ -330,3 +326,26 @@ btnPrevSlide.addEventListener('click', () => {
 setInterval(() => {
     nextSlide();
 }, 4000);
+
+function loadMyCart() {
+    let items = Object.keys(localStorage)
+
+    if (items.length > 0) {
+        myCart.classList.replace('no-items', 'have-items')
+        cartAmount.textContent = items.length
+    }
+
+    for (i of items)
+        cartItem.prepend(createMyCartItem(i))
+}
+
+function createMyCartItem(idx) {
+    let li = document.createElement('li');
+    let items = localStorage.getItem(idx).split(';');
+
+    li.innerHTML =
+        `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
+        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">X${items[1]}</span></span>
+        <i class="fas fa-times my-cart-remove"></i>`
+    return li;
+}
