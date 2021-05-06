@@ -250,6 +250,10 @@ header .menu-toggler {
   padding: 0 0.5rem;
 }
 
+.nav-link.my-cart.have-items:hover #mycart-item li:not(:last-child) {
+  border-bottom: 1px dashed var(--primary-color);
+}
+
 .nav-link.my-cart.have-items:hover #mycart-item img {
   width: 50px;
 }
@@ -260,10 +264,12 @@ header .menu-toggler {
 
 .nav-link.my-cart.have-items:hover #mycart-item li span#cart-item_name {
   text-transform: capitalize;
+  font-size: 12px;
 }
 
 .nav-link.my-cart.have-items:hover #mycart-item li span#cart-item_quan {
   color: var(--primary-color);
+  margin-left: .25rem;
 } 
 
 .nav-link.my-cart.have-items:hover #mycart-item li .my-cart-remove {
@@ -276,6 +282,10 @@ header .menu-toggler {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.nav-link.my-cart.have-items:hover #mycart-item li .my-cart-remove:hover {
+  transform: scale(1.1);
 }
 
 .nav-link.my-cart.have-items:hover #mycart-item {

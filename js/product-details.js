@@ -351,7 +351,369 @@ const products = [
         keyBoard: 'Chiclet Notebook Keyboard with Backlight',
         weight: '2.1Kg',
         battery: 'Lithium-Ion 4-Cell 76 Wh'
-    }
+    },
+    {
+        id: 13,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 14" Prestige 14 Laptop (Rose Pink)',
+        brand: 'MSI',
+        rate: 4.8,
+        reviews: 70,
+        sold: 120,
+        screen: '14" 1920 x 1080 IPS Display',
+        processor: 'Intel Core i7 4-Core (11th Gen) 1.2GHz',
+        memory: '16GB (8GB x2) DDR4 3200MHz',
+        hardDrive: '1TB M.2 SSD',
+        oldPrice: '$1,549',
+        newPrice: '$1,400',
+        gpu: 'NVIDIA GTX 1650 Max-Q',
+        connection: 'Bluetooth 5.1 and Wi-Fi 6',
+        keyBoard: 'Backlight',
+        weight: '2.5Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 14,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 17.3" WS75 Series Mobile Workstation',
+        brand: 'MSI',
+        rate: 4.5,
+        reviews: 56,
+        sold: 90,
+        screen: '17.3" 1920 x 1080 Full HD IPS Display',
+        processor: '2.4 GHz Intel Core i9- 10980HK Eight - Core',
+        memory: '64GB DDR4 RAM',
+        hardDrive: '1TB NVMe PCIe M.2 SSD',
+        oldPrice: '$3,549',
+        newPrice: '$3,400',
+        gpu: 'NVIDIA Quadro RTX 5000(16GB GDDR6)',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.1',
+        keyBoard: 'Backlight',
+        weight: '2.7Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 15,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 15.6" Prestige 15 Laptop (Urban Silver)',
+        brand: 'MSI',
+        rate: 4.4,
+        reviews: 72,
+        sold: 35,
+        screen: '15.6" 3840 x 2160 Display',
+        processor: '1.2 GHz Intel Core i7 4-Core (11th Gen)',
+        memory: '32GB of DDR4',
+        hardDrive: '1TB M.2 SSD',
+        oldPrice: '$1,799',
+        newPrice: '$1,700',
+        gpu: 'NVIDIA GeForce GTX 1650 Max - Q',
+        connection: 'Bluetooth 5.1 and Wi- Fi 6',
+        keyBoard: 'Backlit Keyboard',
+        weight: '2.3Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+
+    },
+    {
+        id: 16,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 15.6" GE63 Raider RGB Gaming Laptop',
+        brand: 'MSI',
+        rate: 5.0,
+        reviews: 140,
+        sold: 95,
+        screen: '15.6" 1920 x 1080 144 Hz IPS Display',
+        processor: '2.6 GHz Intel Core i7- 9750H Six - Core',
+        memory: '32GB DDR4',
+        hardDrive: ' 512GB NVMe SSD + 1TB HDD',
+        oldPrice: '$1,399',
+        newPrice: '$1,300',
+        gpu: 'NVIDIA GeForce RTX 2060(6GB GDDR6)',
+        connection: 'Bluetooth 5.1 and Wi - Fi 5(802.11ac) ',
+        keyBoard: ' MSI Mystic Light RGB Lighting',
+        weight: '2.8Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 17,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 14" Prestige 14 EVO Laptop',
+        brand: 'MSI',
+        rate: 4.0,
+        reviews: 45,
+        sold: 72,
+        screen: '14" FHD 1920 x 1080 IPS Display',
+        processor: '1.2 GHz Intel Core i7 Quad- Core 11th Gen',
+        memory: '16 GB LPDDR4X',
+        hardDrive: '512GB NVMe SSD',
+        oldPrice: '$1,149',
+        newPrice: '$1,049',
+        gpu: 'NVIDIA GeForce GTX 1650 Max-Q',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.1',
+        keyBoard: 'Thunderbolt 4 | USB Type-A',
+        weight: '2.6Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+
+    },
+    {
+        id: 18,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 13.4 "Summit E13FlipEvo (Ink Black)',
+        brand: 'MSI',
+        rate: 4.2,
+        reviews: 40,
+        sold: 72,
+        screen: '13, 4 "FHD 1920 x 1200',
+        processor: '1, 2 GHz Intel Core i7 Quad- Core 11th Gen',
+        memory: ' 16 GB LPDDR4X',
+        hardDrive: ' 512GB  SSD M.2',
+        oldPrice: '$1,549',
+        newPrice: '$1,449',
+        gpu: 'NVIDIA GeForce GTX 1650 Max-Q',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.2',
+        keyBoard: 'Thunderbolt 4 | USB Type-C',
+        weight: '2.8Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 19,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 14" Modern 14B Notebook (Beige Mousse)',
+        brand: 'MSI',
+        rate: 4.8,
+        reviews: 49,
+        sold: 90,
+        screen: '14" 1920 x 1080 FHD IPS Display',
+        processor: '3.0 GHz Intel Core i3 2-Core(11th Gen)',
+        memory: '8GB of DDR4 RAM ',
+        hardDrive: ' 512GB  SSD ',
+        oldPrice: '$649',
+        newPrice: '$549',
+        gpu: 'Intel Iris Xe Graphics',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.2',
+        keyBoard: 'Thunderbolt 4 | USB Type-C',
+        weight: '2.2Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 20,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 14" Modern 14B Notebook (Beige Mousse)',
+        brand: 'MSI',
+        rate: 4.8,
+        reviews: 49,
+        sold: 90,
+        screen: '14" 1920 x 1080 FHD IPS Display',
+        processor: '3.0 GHz Intel Core i3 2-Core(11th Gen)',
+        memory: '8GB of DDR4 RAM ',
+        hardDrive: ' 512GB  SSD ',
+        oldPrice: '$649',
+        newPrice: '$549',
+        gpu: 'Intel Iris Xe Graphics',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.2',
+        keyBoard: 'Thunderbolt 4 | USB Type-C',
+        weight: '2.2Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 21,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 15.6" Summit B15 Laptop',
+        brand: 'MSI',
+        rate: 4.8,
+        reviews: 79,
+        sold: 49,
+        screen: '14" 1920 x 1080 FHD IPS Display',
+        processor: '1.6 GHz Intel Core i5- 10210U Quad - Core',
+        memory: '8GB of DDR4 RAM ',
+        hardDrive: ' 512GB  SSD ',
+        oldPrice: '$990',
+        newPrice: '$890',
+        gpu: 'NVIDIA GeForce GTX 1650 Max - Q',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.2',
+        keyBoard: 'Backlit Keyboard',
+        weight: '2.5Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 22,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 14" Prestige 14 Laptop',
+        brand: 'MSI',
+        rate: 4.7,
+        reviews: 20,
+        sold: 12,
+        screen: '14" 1920 x 1080 Full HD IPS Display',
+        processor: '1.6 GHz Intel Core i5- 10210U Quad - Core',
+        memory: ' 16 GB LPDDR4X',
+        hardDrive: ' 512GB NVMe SSD',
+        oldPrice: '$1,179',
+        newPrice: '$1,079',
+        gpu: 'NVIDIA GeForce GTX 1650 Max-Q (4GB GDDR5)',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.0',
+        keyBoard: 'USB Type-A & Type-C | Thunderbolt 3',
+        weight: '2.8Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 23,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 15.6" Creator Series Modern 15 Laptop',
+        brand: 'MSI',
+        rate: 4.6,
+        reviews: 29,
+        sold: 39,
+        screen: '15.6" 1920 x 1080 Full HD IPS Display',
+        processor: '1.8 GHz Intel Core i7- 10510U Quad - Core',
+        memory: ' 8GB DDR4 ',
+        hardDrive: ' 512GB NVMe PCIe M.2 SSD',
+        oldPrice: '$889',
+        newPrice: '$870',
+        gpu: 'NVIDIA GeForce MX330 (2GB GDDR5)',
+        connection: 'Wi - Fi 5(802.11ac) | Bluetooth 5.0',
+        keyBoard: 'USB Type-A & Type-C | HDMI',
+        weight: '2.5Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
+    {
+        id: 23,
+        showCaseImgs: [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "a.png",
+            "a.png",
+            "a.png",
+        ],
+        video: 'src="https://www.youtube.com/embed/Vq9kZVWk114" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen',
+        productName: 'MSI 15.6" Prestige 15 Laptop',
+        brand: 'MSI',
+        rate: 4.3,
+        reviews: 46,
+        sold: 30,
+        screen: '15.6" 3840 x 2160 4K Display',
+        processor: '1.1 GHz Intel Core i7- 10710U Six - Core',
+        memory: ' 32GB DDR4 ',
+        hardDrive: '1TB NVMe PCIe SSD',
+        oldPrice: '$1,889',
+        newPrice: '$1,770',
+        gpu: 'NVIDIA GeForce GTX 1650 (4GB GDDR5)',
+        connection: 'Wi - Fi 6(802.11ax) | Bluetooth 5.0',
+        keyBoard: 'Backlight',
+        weight: '2.3Kg',
+        battery: 'Li-Ion 4-Cell 99.9Wh'
+    },
 ];
 
 // loadProductDetail();
@@ -551,24 +913,26 @@ btnToCart.addEventListener('click', () => {
     let curProductID = new URLSearchParams(window.location.search).get('product');
     myCart.classList.replace('no-items', 'have-items')
 
+    let cartQuan = parseInt(quantity.value)
+
     let temp = localStorage.getItem('item-' + curProductID)
 
-    if (temp != null)
-        localStorage.setItem('item-' + curProductID, `${products[curProductID - 1]['productName']};${parseInt(temp.split(';')[1]) + 1};
-        ${products[curProductID - 1]['showCaseImgs'][0]}`)
-    else
-        localStorage.setItem('item-' + curProductID, `${products[curProductID - 1]['productName']};${1};
+    if (temp != null) {
+        localStorage.setItem('item-' + curProductID, `${products[curProductID - 1]['productName']};${parseInt(temp.split(';')[1]) + cartQuan};
         ${products[curProductID - 1]['showCaseImgs'][0]}`)
 
-    temp = localStorage.getItem('item-' + curProductID)
-    let quan = temp.split(';')[1]
+        temp = localStorage.getItem('item-' + curProductID)
+        let quan = temp.split(';')[1]
 
-    if (quan == 1) {
-        cartItem.prepend(createMyCartItem('item-' + curProductID))
-        cartAmount.textContent = Object.keys(localStorage).length
-    }
-    else
         updateQuantity(curProductID, quan)
+    }
+    else {
+        localStorage.setItem('item-' + curProductID, `${products[curProductID - 1]['productName']};${cartQuan};
+        ${products[curProductID - 1]['showCaseImgs'][0]}`)
+        cartItem.prepend(createMyCartItem('item-' + curProductID))
+    }
+
+    cartAmount.textContent = Object.keys(localStorage).length
 });
 
 function createMyCartItem(idx) {
@@ -580,7 +944,7 @@ function createMyCartItem(idx) {
 
     li.innerHTML =
         `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
-        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">X${items[1]}</span></span>
+        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">x${items[1]}</span></span>
         <i class="fas fa-times my-cart-remove"></i>`
     return li;
 }
@@ -678,6 +1042,10 @@ function getProductDetail(idx) {
     `
     return wrapper
 }
+
+myCart.addEventListener('click', () => {
+    window.location.href = "./myCart.html"
+})
 
 // Menu toggle 
 $(document).ready(() => {

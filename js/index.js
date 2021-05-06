@@ -76,28 +76,76 @@ const page1 = [
 const page2 = [
     {
         id: 13,
-        name: 'Acer Nitro 5',
-        price: '$ 696',
+        name: 'MSI Prestige 14',
+        price: '$ 1400',
         img: './img/products/list/13.png'
     },
     {
         id: 14,
-        name: 'Acer Concept 3 Ezel',
-        price: '$ 1,692',
+        name: 'MSI WS75 Series',
+        price: '$ 3,400',
         img: './img/products/list/14.png'
     },
     {
         id: 15,
-        name: 'Acer Aspire 3 Series',
-        price: '$ 549',
+        name: 'MSI Prestige 15',
+        price: '$ 1,700',
         img: './img/products/list/15.png'
     },
     {
         id: 16,
-        name: 'Acer Aspire 3 Series',
-        price: '$ 800',
+        name: 'MSI GE63 Raider',
+        price: '$ 1,300',
         img: './img/products/list/16.png'
     },
+    {
+        id: 17,
+        name: 'MSI Prestige 14',
+        price: '$ 1,049',
+        img: './img/products/list/17.png'
+    },
+    {
+        id: 18,
+        name: 'MSI Summit E13',
+        price: '$ 1,449',
+        img: './img/products/list/18.png'
+    },
+    {
+        id: 19,
+        name: 'MSI Modern 14B',
+        price: '$ 549',
+        img: './img/products/list/19.png'
+    },
+    {
+        id: 20,
+        name: 'MSI Modern 14B',
+        price: '$ 549',
+        img: './img/products/list/20.png'
+    },
+    {
+        id: 21,
+        name: 'MSI Summit B15',
+        price: '$ 890',
+        img: './img/products/list/21.png'
+    },
+    {
+        id: 22,
+        name: 'MSI 14" Prestige 14',
+        price: '$ 1,079',
+        img: './img/products/list/22.png'
+    },
+    {
+        id: 23,
+        name: 'MSI Creator Series',
+        price: '$ 870',
+        img: './img/products/list/23.png'
+    },
+    {
+        id: 24,
+        name: 'MSI Prestige 15',
+        price: '$ 1,770',
+        img: './img/products/list/24.png'
+    }
 ];
 
 const menuToggler = $('.menu-toggler')
@@ -345,7 +393,11 @@ function createMyCartItem(idx) {
 
     li.innerHTML =
         `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
-        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">X${items[1]}</span></span>
+        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">x${items[1]}</span></span>
         <i class="fas fa-times my-cart-remove"></i>`
     return li;
 }
+
+myCart.addEventListener('click', () => {
+    window.location.href = "./myCart.html"
+})
