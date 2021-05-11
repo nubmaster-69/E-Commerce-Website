@@ -174,7 +174,8 @@ header .logo {
 }
 
 .nav-bar #my-account .profile,
-.nav-bar.active #my-account .no-account {
+.nav-bar.active #my-account .no-account,
+.nav-bar .sign-out {
   display: none;
 }
 
@@ -184,16 +185,17 @@ header .logo {
   justify-content: center;
 }
 
-.nav-bar.active #my-account img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid var(--primary-color);
-  transform: translateY(-20%);
+.nav-bar.active #my-account i {
+  font-size: 1.6rem;
 }
 
 .nav-bar.active #my-account span {
   margin-left: 0.5rem;
+}
+
+.nav-bar.active .sign-out {
+  display: inline-block;
+  text-transform: capitalize;
 }
 
 #cart-amount-container {
@@ -853,6 +855,7 @@ footer {
 
   .nav-links {
     height: 0;
+    max-height: 350px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -875,7 +878,7 @@ footer {
   }
 
   .nav-links.menu-active {
-    height: 300px;
+    height: 350px;
   }
 
   header .menu-toggler {

@@ -5,10 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Nguyen Chi Hieu & Ngo Van Dat">
+  <meta name="description"
+    content="A Website that give you the best & latest high-end gaming laptop with lovely prices">
+  <meta name="keywords"
+    content="Gaming Laptop, laptop cheep, low prices laptop, high end devices, asus, rog, acer, msi">
   <link rel="stylesheet" href="./css/product-details.css">
-  <link rel="icon" href="./img/page-icon/home.png">
   <link rel="stylesheet" href="./fontawesome/css/all.css">
+  <link rel="icon" href="./img/page-icon/shopping-cart.png">
   <script src="./libs/jquery.js"></script>
+  <script src="./js/product-list.js"></script>
   <title>Product Details</title>
 </head>
 
@@ -21,8 +28,18 @@
 
         <ul class="nav-links">
           <li class="nav-link">
-            <a href="./login.html"><i class="fas fa-user"></i> Account</a>
+            <a href="#" id="my-account">
+              <div class="profile">
+                <i class="fas fa-user-circle"></i>
+                <span id="username"></span>
+              </div>
+
+              <div class="no-account">
+                <i class="fas fa-user"></i> Account
+              </div>
+            </a>
           </li>
+
           <li class="nav-link">
             <a href="./index.html#l-product"><i class="fas fa-laptop"></i> Products</a>
           </li>
@@ -34,6 +51,10 @@
             <ul id="mycart-item">
               <a href="./mycart.html" id="my-cart-view">View Cart</a>
             </ul>
+          </li>
+
+          <li class="nav-link sign-out">
+            <a href="#"><i class="fas fa-sign-out-alt"></i> log out</a>
           </li>
 
         </ul>
