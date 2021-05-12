@@ -129,7 +129,6 @@ let getProductDesc = (list) => {
 
 window.addEventListener('load', () => {
     getProductDesc(page1);
-    loadMyCart();
     loadAccount();
 })
 
@@ -138,6 +137,7 @@ function loadAccount() {
     if (temp[0] == '1') {
         navBar.classList.add('active')
         document.querySelector('#username').textContent = temp[1]
+        loadMyCart();
     }
 }
 
@@ -279,5 +279,8 @@ function createMyCartItem(idx) {
 }
 
 myCart.addEventListener('click', () => {
-    window.location.href = "./myCart.html"
+    if (navBar.classList.contains('active'))
+        window.location.href = "./myCart.html"
+    else
+        window.location.href = "./login.html"
 })

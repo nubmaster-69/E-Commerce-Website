@@ -34,6 +34,7 @@ function loadAccount() {
     if (temp[0] == '1') {
         navBar.classList.add('active')
         document.querySelector('#username').textContent = temp[1]
+        loadMyCart();
     }
 }
 
@@ -44,7 +45,6 @@ var loadProductDetail = () => {
     content.append(createContent(curProductID));
     specs.append(getSpecifications(curProductID))
     moreDetail.append(getProductDetail(curProductID))
-    loadMyCart()
     loadAccount()
 
     mainImgSlide = document.querySelectorAll('.main-img');
@@ -251,6 +251,12 @@ quantity.addEventListener('keydown', (e) => {
 })
 
 btnToCart.addEventListener('click', () => {
+
+    // let isLogin =  : '0'
+    if (localStorage.getItem('login') == null)
+        window.location.href = './login.html'
+
+
     let curProductID = new URLSearchParams(window.location.search).get('product');
     myCart.classList.replace('no-items', 'have-items')
 
@@ -397,7 +403,10 @@ function getProductDetail(idx) {
 }
 
 myCart.addEventListener('click', () => {
-    window.location.href = "./myCart.html"
+    if (navBar.classList.contains('active'))
+        window.location.href = "./myCart.html"
+    else
+        window.location.href = "./login.html"
 })
 
 // Menu toggle 
