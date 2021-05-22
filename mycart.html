@@ -13,11 +13,56 @@
     <link rel="stylesheet" href="./css/myCart.css" />
     <link rel="icon" href="./img/page-icon/shipping.svg" />
     <link rel="stylesheet" href="./fontawesome/css/all.css" />
+    <script src="./js/product-list.js"></script>
     <script src="./libs/jquery.js"></script>
     <title>LFU | My Cart</title>
 </head>
 
 <body>
+
+    <div class="display-error">
+        <div class="message">
+            <p id="error"></p>
+            <button id="btn-close-err">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="confirm-payment">
+        <div class="cofirm-form">
+            <div class="title">
+                <i class="fas fa-credit-card"></i>
+                <span>Credit Card</span>
+            </div>
+            <button class="btn-purchase btn-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="input-field">
+                <i class="fas fa-phone"></i>
+                <input id="phoneNumber" type="text" placeholder="Phone number">
+            </div>
+
+            <div class="input-field">
+                <i class="far fa-credit-card"></i>
+                <input id="bankAccount" type="text" placeholder="Bank Account Number">
+            </div>
+
+            <button class="btn-purchase btn-confirm">Cofirm Purchase</button>
+        </div>
+    </div>
+
+    <div class="thank-purchase">
+        <div class="thank-purhcase__container">
+            <img src="./img/background/ship.jfif" alt="">
+            <div class="purchase-desc">
+                <p>thank you for your purchase!</p>
+                <p>you're the heart of our business!</p>
+            </div>
+            <button class="btn-continue">Continue Shopping!</button>
+        </div>
+    </div>
 
     <div class="landing-page">
         <header id="top">
@@ -57,97 +102,21 @@
 
     <div class="wrapper">
         <div class="cart-items-container">
-
             <div class="cart-header">
                 <div class="cart-header__product">Product</div>
                 <div class="cart-header__unit-price">Unit Price</div>
                 <div class="cart-header__quantity">Quantity</div>
                 <div class="cart-header__delete">Action</div>
             </div>
+        </div>
 
-            <div class="cart-item">
-
-                <div class="cart-item__product">
-                    <div class="cart-item__check-box">
-                        <input type="checkbox">
-                    </div>
-
-                    <div class="cart-item__product-overview">
-                        <img src="./img/products/Gaming-laptop/1/1.jpg" alt="">
-                        <div class="product-overview__product-name">
-                            msi ge66 dragon shield
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item__unit-price">
-                    $ 9,999
-                </div>
-
-                <div class="cart-item__quantity">
-                    <button class="btn btn-decrease">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <input type="text" maxlength="2">
-                    <button class="btn btn-increase">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="cart-item__delete">
-                    <button class="btn-delete">
-                        <i class="fas fa-times-circle"></i>
-                    </button>
-                </div>
+        <div class="cart-to-charge">
+            <div class="to-charge__total">
+                Total Price: <span id="price">$ 0</span>
             </div>
-
-            <div class="cart-item">
-
-                <div class="cart-item__product">
-                    <div class="cart-item__check-box">
-                        <input type="checkbox">
-                    </div>
-
-                    <div class="cart-item__product-overview">
-                        <img src="./img/products/Gaming-laptop/2/1.png" alt="">
-                        <div class="product-overview__product-name">
-                            msi ge66 dragon shield
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item__unit-price">
-                    $ 9,999
-                </div>
-
-                <div class="cart-item__quantity">
-                    <button class="btn btn-decrease">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <input type="text" maxlength="2">
-                    <button class="btn btn-increase">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="cart-item__delete">
-                    <button class="btn-delete">
-                        <i class="fas fa-times-circle"></i>
-                    </button>
-                </div>
+            <div class="to-charge__pay">
+                <button class="btn-pay">Buy</button>
             </div>
-
-            <div class="cart-to-charge">
-                <div class="to-charge__total">
-                    Total: <span class="price"> $ 999999999999</span>
-                </div>
-                <div class="to-charge__pay">
-                    <button class="btn-pay">
-                        Buy
-                    </button>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -157,15 +126,16 @@
         <img src="./img/Sponsor/asus.png" alt="">
     </section>
 
+
     <footer>
         <div class="wrapper">
             <div class="footer-detail">
                 <div class="page-intro">
                     <a href="#top" class="page-logo">L4U.</a>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nemo
-                        consequuntur hic aut, doloribus quisquam recusandae. Rerum
-                        pariatur sequi eum
+                        Come to L4U, where you can get all devices with latest technology but with a really really
+                        'lovely' price!
+                        We guarantee that we will and always satisfy you!
                     </p>
                 </div>
 

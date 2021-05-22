@@ -122,12 +122,12 @@ header .menu-toggler {
 
 body {
   background: #f2eaea;
+  position: relative;
 }
 
 .cart-items-container {
   width: 100%;
   margin: 100px auto 0 auto;
-  /* min-height: 100vh; */
 }
 
 .cart-header {
@@ -180,13 +180,16 @@ body {
   text-align: center;
 }
 
-input[type='text'] {
+.cart-item input[type='text'] {
   width: 40px;
   height: 25px;
   outline: none;
   border-radius: 4px;
   border: 1px solid #818183;
   text-align: center;
+  background: #fff;
+  font-weight: 500;
+  color: #333;
 }
 
 .btn {
@@ -235,16 +238,200 @@ input[type='text'] {
   font-size: 1.2rem;
   font-weight: 300;
   border-radius: 4px;
-  transition: filter .3s ease;
-}
-
-.cart-to-charge .to-charge__pay .btn-pay:hover {
-  filter: brightness(130%);
   cursor: pointer;
 }
 
+.confirm-payment {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient( rgb(117, 116, 116), rgba(0, 0, 0, 0.3));
+  align-items: center;
+  justify-content: center;
+}
 
+.confirm-payment.active {
+  display: flex;
+}
 
+.cofirm-form {
+  width: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+  animation: popUp .3s ease;
+  border-radius: 6px;
+}
+
+.cofirm-form .btn-purchase.btn-close {
+  position: absolute;
+  right: 15px;
+  color: var(--primary-color);
+  top: 10px;
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.cofirm-form .btn-purchase.btn-close:hover {
+  transform: scale(1.2);
+}
+
+.cofirm-form .btn-purchase.btn-confirm {
+  width: 60%;
+  color: #fff;
+  background: var(--primary-color);
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.cofirm-form .title {
+  margin: 3rem 0;
+  text-transform: capitalize;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: .5rem 1.25rem;
+  border-radius: 6px;
+}
+
+.cofirm-form .title i {
+  font-size: 1.3rem;
+}
+
+.cofirm-form .title span {
+  margin-left: .35rem;
+  text-transform: capitalize;
+}
+
+.cofirm-form .input-field {
+  width: 90%;
+  margin-bottom: 2rem;
+  outline: none;
+  padding: .5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cofirm-form .input-field i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.cofirm-form .input-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding-left: 1rem;
+}
+
+.cofirm-form .input-field input::placeholder {
+  color: var(--primary-color);
+}
+
+.thank-purchase {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient( rgb(117, 116, 116), rgba(0, 0, 0, 0.3));
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-purchase.active {
+  display: flex;
+}
+
+.thank-purhcase__container {
+  width: 50%;
+  background: #fff;
+  text-align: center;
+  border-radius: 8px;
+  animation: popUp .3s ease;
+}
+
+.thank-purhcase__container img {
+  width: 50%;
+}
+
+.thank-purhcase__container p {
+  text-transform: capitalize;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+
+.thank-purhcase__container .btn-continue {
+  border: none;
+  outline: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  margin: 2rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.display-error {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient( rgb(117, 116, 116), rgba(0, 0, 0, 0.3));
+  align-items: center;
+  justify-content: center;
+}
+
+.display-error.active {
+  display: flex;
+  z-index: 999999;
+}
+
+.display-error.active .message{
+  width: 50%;
+  height: 25%;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-error.active .message p {
+  color: red;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.display-error.active .message button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  outline: none;
+  background: var(--primary-color);
+  color: #fff;
+  padding: .25rem .5rem;
+  border-radius: 6px;
+}
 
 /* sponsor */
 .sponsor {
@@ -347,7 +534,7 @@ footer {
 }
 
 @media (max-width: 769px) {
-   .wrapper {
+  .wrapper {
     width: 90%;
   }
 
@@ -433,6 +620,26 @@ footer {
 }
 
 @media (max-width: 540px) {
+  .cofirm-form .btn-purchase.btn-confirm {
+    font-size: 1rem;
+    padding: .25rem .5rem;
+    width: 90%;
+  }
+
+  .display-error.active .message {
+    width: 90%;
+    padding: 2.5rem .25rem;
+  }
+
+  .display-error.active .message p {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .thank-purhcase__container{
+    width: 90%;
+  }
+
   .cart-header, .cart-item {
     font-size: .75rem;
   }
@@ -442,9 +649,10 @@ footer {
     margin-right: .5rem;
   }
 
-  input[type='text'] {
+  .cart-item input[type='text'] {
     width: 30px;
     height: 20px;
+    font-size: .75rem;
   }
 
   .btn {
@@ -464,15 +672,29 @@ footer {
   }
 }
 
+@media (max-width: 415px) {
+  .cofirm-form {
+    width: 90%;
+  }
+
+  .cofirm-form .title {
+    margin-top: 4rem;
+  }
+
+  .thank-purhcase__container p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 320px) {
   .cart-item__product .cart-item__product-overview img {
     width: 60px;
     margin-right: .5rem;
   }
-
-  input[type='text'] {
+  .cart-item input[type='text'] {
     width: 30px;
     height: 15px;
+    font-size: .5rem;
   }
 
   .btn {
@@ -493,7 +715,7 @@ footer {
     font-size: .5rem;
   }
 
-  input[type='text'] {
+  .cart-item input[type='text'] {
     width: 20px;
     height: 15px;
   }
@@ -532,5 +754,14 @@ footer {
   .cart-to-charge .to-charge__total,
   .cart-to-charge .to-charge__pay .btn-pay {
     font-size: .5rem;
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: translateY(500%);
+  }
+  to {
+    transform: translateY(0);
   }
 }

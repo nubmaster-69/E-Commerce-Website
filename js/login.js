@@ -55,7 +55,11 @@ showPassSignup.addEventListener('click', () => {
 });
 
 function updateUsersAccount() {
-    let accounts = localStorage.getItem('signup').split('-');
+    let temp = localStorage.getItem('signup');
+    if (temp == null)
+        return;
+
+    let accounts = temp.split('-');
 
     accounts.forEach(account => {
         let temp = account.split(';')
@@ -70,7 +74,7 @@ function updateUsersAccount() {
 btnLogin.addEventListener('click', () => {
 
     updateUsersAccount();
-    console.log(users)
+    // console.log(users)
 
     let validUserName = false, validPass = false;
 

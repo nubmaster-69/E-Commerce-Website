@@ -66,8 +66,10 @@ function loadMyCart() {
             if (item != 'login' && item != 'signup')
                 cartItemsLen++;
 
+        if (cartItemsLen != 0)
+            myCart.classList.replace('no-items', 'have-items');
+
         cartAmount.textContent = cartItemsLen;
-        myCart.classList.replace('no-items', 'have-items')
     }
 
     for (i of items)
@@ -252,10 +254,8 @@ quantity.addEventListener('keydown', (e) => {
 
 btnToCart.addEventListener('click', () => {
 
-    // let isLogin =  : '0'
     if (localStorage.getItem('login') == null)
         window.location.href = './login.html'
-
 
     let curProductID = new URLSearchParams(window.location.search).get('product');
     myCart.classList.replace('no-items', 'have-items')
@@ -303,8 +303,8 @@ function createMyCartItem(idx) {
 
     li.innerHTML =
         `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
-        <span id="cart-item_name">${items[0]}<span id="cart-item_quan">x${items[1]}</span></span>
-        <i class="fas fa-times my-cart-remove"></i>`
+        <span id="cart-item_name">${items[0]}</span>
+        <span id="cart-item_quan">x${items[1]}</span>`
     return li;
 }
 

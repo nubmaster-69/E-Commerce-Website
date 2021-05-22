@@ -274,22 +274,6 @@ header .menu-toggler {
   margin-left: .25rem;
 } 
 
-.nav-link.my-cart.have-items:hover #mycart-item li .my-cart-remove {
-  font-size: 10px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--primary-color);
-  color: var(--light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-link.my-cart.have-items:hover #mycart-item li .my-cart-remove:hover {
-  transform: scale(1.1);
-}
-
 .nav-link.my-cart.have-items:hover #mycart-item {
   text-align: right;
 }
@@ -476,12 +460,13 @@ header .menu-toggler {
 
 .img-card .img-container {
   height: 250px;
-  /* background: var(--primary-color); */
   background: #42454d;
 }
 
 .img-container img {
-  width: 90%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   max-width: 300px;
   -webkit-filter: drop-shadow(0 0 6px #fff);
   filter: drop-shadow(0 0 6px #fff);
@@ -490,7 +475,6 @@ header .menu-toggler {
   -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  /* transform: scale(.9); */
 }
 
 .img-container img:hover {
@@ -541,6 +525,7 @@ header .menu-toggler {
 
 .product-desc .name {
   padding: 2rem 0.5rem;
+  color: #333;
 }
 
 /* ==Product - Hot deal== */
