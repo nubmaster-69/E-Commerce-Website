@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nguyen Chi Hieu & Ngo Van Dat">
+    <meta name="description"
+        content="A Website that give you the best & latest high-end gaming laptop with lovely prices">
+    <meta name="keywords"
+        content="Gaming Laptop, laptop cheep, low prices laptop, high end devices, asus, rog, acer, msi">
+    <link rel="stylesheet" href="../css/myCart.css" />
+    <link rel="icon" href="../img/page-icon/shipping.svg" />
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
+    <script src="../js/product-list.js"></script>
+    <script src="../libs/jquery.js"></script>
+    <title>LFU | My Cart</title>
+</head>
+
+<body>
+
+    <div class="display-error">
+        <div class="message">
+            <p id="error"></p>
+            <button id="btn-close-err">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="confirm-payment">
+        <div class="cofirm-form">
+            <div class="title">
+                <i class="fas fa-credit-card"></i>
+                <span>Credit Card</span>
+            </div>
+            <button class="btn-purchase btn-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="input-field">
+                <i class="fas fa-phone"></i>
+                <input id="phoneNumber" type="text" placeholder="Phone number">
+            </div>
+
+            <div class="input-field">
+                <i class="far fa-credit-card"></i>
+                <input id="bankAccount" type="text" autocomplete="off" placeholder="Bank Account Number">
+            </div>
+
+            <button class="btn-purchase btn-confirm">Cofirm Purchase</button>
+        </div>
+    </div>
+
+    <div class="thank-purchase">
+        <div class="thank-purhcase__container">
+            <img src="../img/background/ship.jfif" alt="">
+            <div class="purchase-desc">
+                <p>thank you for your purchase!</p>
+                <p>you're the heart of our business!</p>
+            </div>
+            <button class="btn-continue">Continue Shopping!</button>
+        </div>
+    </div>
+
+    <div class="landing-page">
+        <header id="top">
+            <nav class="nav-bar">
+                <a href="./index.html" class="logo">LAP4U.</a>
+
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="#" id="my-account">
+                            <div class="profile">
+                                <i class="fas fa-user-circle"></i>
+                                <span id="username"></span>
+                            </div>
+
+                            <div class="no-account">
+                                <i class="fas fa-user"></i> Account
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="./index.html#l-product"><i class="fas fa-laptop"></i> Products</a>
+                    </li>
+
+                    <li class="nav-link sign-out">
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> log out</a>
+                    </li>
+
+                </ul>
+
+                <div class="menu-toggler">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapper">
+        <div class="cart-items-container">
+            <div class="cart-header">
+                <div class="cart-header__product">Product</div>
+                <div class="cart-header__unit-price">Unit Price</div>
+                <div class="cart-header__quantity">Quantity</div>
+                <div class="cart-header__delete">Action</div>
+            </div>
+        </div>
+
+        <div class="cart-to-charge">
+            <div class="to-charge__total">
+                Total Price: <span id="price">$ 0</span>
+            </div>
+            <div class="to-charge__pay">
+                <button class="btn-pay">Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="sponsor">
+        <img src="../img/Sponsor/acer.png" alt="">
+        <img src="../img/Sponsor/msi.png" alt="">
+        <img src="../img/Sponsor/asus.png" alt="">
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer-detail">
+                <div class="page-intro">
+                    <a href="#top" class="page-logo">L4U.</a>
+                    <p>
+                        Come to L4U, where you can get all devices with latest technology but with a really really
+                        'lovely' price!
+                        We guarantee that we will and always satisfy you!
+                    </p>
+                </div>
+
+                <div class="page-address">
+                    <p>Contact us</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt">
+                                    12 Nguyen Van Bao, Go Vap, HCM City</i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-door-open"> 08:00am - 11:59pm</i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-phone"> 1952-1341</i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-envelope"> lfu@gmail.com</i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="page-sm">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy-right">
+                <hr />
+                <a href="./members.html" target="_blank">
+                    &copy;2021 All right reserved - <span>L4U Team</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/myCart.js"></script>
+</body>
+
+</html>

@@ -36,7 +36,7 @@ window.addEventListener('scroll', () => {
 });
 
 accountToggle.addEventListener('click', () => {
-    window.location.href = "./login.html";
+    window.location.href = "../html/login.html";
 })
 
 window.addEventListener('load', () => {
@@ -53,7 +53,7 @@ function loadAccount() {
 
 logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('login')
-    window.location.href = "./index.html";
+    window.location.href = "../html/index.html";
 })
 
 window.onload = loadCartItems();
@@ -165,7 +165,7 @@ function createCartItem(item) {
                 <input type="checkbox"">
             </div>
             <div class="cart-item__product-overview">
-                <img src="./img/products/Gaming-laptop/${idx}/${temp[2].trim()}" alt="">
+                <img src="../img/products/Gaming-laptop/${idx}/${temp[2].trim()}" alt="">
                 <div class="product-overview__product-name">${temp[0]}</div>
             </div>
         </div>
@@ -204,23 +204,34 @@ function removePurchasedItems() {
     })
 }
 
+function popUpMsg(msg) {
+    errMsgContainer.classList.toggle('active')
+    errMsg.textContent = msg
+}
+
 function validatePhoneAndBankAccount() {
     let phone = phoneNum.value;
     let acc = bankAcc.value;
 
     if (!/^0\d{9,10}$/.test(phone)) {
-        errMsgContainer.classList.toggle('active')
-        errMsg.textContent = 'Phone number must begin with 0 followed by 9 or 10 digits!'
+        popUpMsg('Phone number must begin with 0 followed by 9 or 10 digits!')
         return false;
     }
 
     if (!/^(\d{4}\s){2}\d{4}$/.test(acc)) {
-        errMsgContainer.classList.toggle('active')
-        errMsg.textContent = 'Bank account should be like xxxx xxxx xxxx where x is digit'
+        popUpMsg('Bank account should be like xxxx xxxx xxxx where x is digit')
         return false;
     }
 
     return true;
+}
+
+function haveProduct() {
+    let items = Object.keys(localStorage)
+    for (item of items)
+        if (/^item-\d$/.test(item))
+            return true
+    return false
 }
 
 btnPay.addEventListener('click', () => {
@@ -230,7 +241,10 @@ btnPay.addEventListener('click', () => {
         })
     }
 
-    confirmPurchaseForm.classList.toggle('active')
+    if (haveProduct())
+        confirmPurchaseForm.classList.toggle('active')
+    else
+        popUpMsg('Your cart is empty!')
 })
 
 btnCloseErrMsg.addEventListener('click', () => {
@@ -243,7 +257,7 @@ btnCloseConfirmForm.addEventListener('click', () => {
 
 btnContinueShopping.addEventListener('click', () => {
     purchaseThankForm.classList.toggle('active');
-    window.location.href = "./index.html"
+    window.location.href = "../html/index.html"
 })
 
 btnConfirmPurchase.addEventListener('click', () => {

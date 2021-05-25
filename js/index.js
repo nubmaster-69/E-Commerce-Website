@@ -46,7 +46,7 @@ $(document).ready(() => {
 })
 
 accountToggle.addEventListener('click', () => {
-    window.location.href = "./login.html";
+    window.location.href = "../html/login.html";
 })
 
 closePopupMsgBtns.forEach(btn => {
@@ -111,7 +111,7 @@ let getProductDesc = (list) => {
     products = document.querySelectorAll('.product');
     products.forEach(product => {
         product.addEventListener('click', (e) => {
-            window.location.href = `./product-details.html?product=${e.currentTarget.id}`;
+            window.location.href = `../html/product-details.html?product=${e.currentTarget.id}`;
         });
     });
 
@@ -193,7 +193,7 @@ function createPage(pageIdx) {
 
     pageNum[pageIdx - 1].classList.add('active');
     setTimeout(() => {
-        window.location.href = "./index.html#l-product";
+        window.location.href = "../html/index.html#l-product";
     }, 100)
 }
 
@@ -274,7 +274,7 @@ function createMyCartItem(idx) {
     let items = localStorage.getItem(idx).split(';');
 
     li.innerHTML =
-        `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
+        `<img src="../img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
         <span id="cart-item_name">${items[0]}</span>
         <span id="cart-item_quan">x${items[1]}</span>`
     return li;
@@ -282,7 +282,7 @@ function createMyCartItem(idx) {
 
 myCart.addEventListener('click', () => {
     if (navBar.classList.contains('active'))
-        window.location.href = "./myCart.html"
+        window.location.href = "../html/myCart.html"
     else
-        window.location.href = "./login.html"
+        window.location.href = "../html/login.html"
 })

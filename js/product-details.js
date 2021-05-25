@@ -21,7 +21,7 @@ var quantity;
 var curQuantity = 1;
 
 accountToggle.addEventListener('click', () => {
-    window.location.href = "./login.html";
+    window.location.href = "../html/login.html";
 })
 
 logoutBtn.addEventListener('click', () => {
@@ -84,19 +84,19 @@ function createShowCase(idx) {
     showCaseDiv.innerHTML =
         `
             <div class="showcase__img">
-                <img class="main-img active-slide" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][0]}" alt="">
-                <img class="main-img" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][1]}" alt="">
-                <img class="main-img" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][2]}" alt="">
-                <img class="main-img" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][3]}" alt="">
-                <img class="main-img" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][4]}" alt="">
+                <img class="main-img active-slide" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][0]}" alt="">
+                <img class="main-img" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][1]}" alt="">
+                <img class="main-img" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][2]}" alt="">
+                <img class="main-img" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][3]}" alt="">
+                <img class="main-img" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][4]}" alt="">
             </div>
 
             <div class="showcase__img--slider">
-                <img class="img-slide" id="1" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][0]}" alt="">
-                <img class="img-slide" id="2" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][1]}" alt="">
-                <img class="img-slide" id="3" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][2]}" alt="">
-                <img class="img-slide" id="4" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][3]}" alt="">
-                <img class="img-slide" id="5" src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][4]}" alt="">
+                <img class="img-slide" id="1" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][0]}" alt="">
+                <img class="img-slide" id="2" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][1]}" alt="">
+                <img class="img-slide" id="3" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][2]}" alt="">
+                <img class="img-slide" id="4" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][3]}" alt="">
+                <img class="img-slide" id="5" src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][4]}" alt="">
             </div>
         `
 
@@ -254,8 +254,9 @@ quantity.addEventListener('keydown', (e) => {
 
 btnToCart.addEventListener('click', () => {
 
-    if (localStorage.getItem('login') == null)
-        window.location.href = './login.html'
+    if (localStorage.getItem('login') == null) {
+        window.location.href = "../html/login.html"
+    }
 
     let curProductID = new URLSearchParams(window.location.search).get('product');
     myCart.classList.replace('no-items', 'have-items')
@@ -291,7 +292,8 @@ btnToCart.addEventListener('click', () => {
 
 btnBuy.addEventListener('click', () => {
     btnToCart.click();
-    window.location.href = "./myCart.html"
+    if (localStorage.getItem('login') != null)
+        window.location.href = "../html/myCart.html"
 })
 
 function createMyCartItem(idx) {
@@ -302,7 +304,7 @@ function createMyCartItem(idx) {
     let items = localStorage.getItem(idx).split(';');
 
     li.innerHTML =
-        `<img src="./img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
+        `<img src="../img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
         <span id="cart-item_name">${items[0]}</span>
         <span id="cart-item_quan">x${items[1]}</span>`
     return li;
@@ -385,16 +387,16 @@ function getProductDetail(idx) {
 
     wrapper.innerHTML = `
         <h3>About this product:</h3>
-        <img src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][5]}"/>
+        <img src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][5]}"/>
         <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!
         <br>
         <br>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!
         </p>
-        <img src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][6]}"/>
+        <img src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][6]}"/>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!</p>
-        <img src="./img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][7]}"/>
+        <img src="../img/products/Gaming-laptop/${idx}/${products[idx - 1]['showCaseImgs'][7]}"/>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum! Qui, esse explicabo dolore architecto, distinctio molestiae excepturi a pariatur fugiat, repudiandae deserunt. Earum expedita illo provident minus dignissimos eius assumenda laudantium. Repellat, sunt. Dicta, harum,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora officia natus, itaque consequuntur cum earum esse. Velit praesentium omnis sapiente numquam magni! Commodi, rerum!</p>
         <h3>Quick Review:</h3>
         <iframe ${products[idx - 1]['video']}></iframe>
@@ -404,9 +406,9 @@ function getProductDetail(idx) {
 
 myCart.addEventListener('click', () => {
     if (navBar.classList.contains('active'))
-        window.location.href = "./myCart.html"
+        window.location.href = "../html/myCart.html"
     else
-        window.location.href = "./login.html"
+        window.location.href = "../html/login.html"
 })
 
 // Menu toggle 
