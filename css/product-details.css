@@ -27,7 +27,6 @@
   width: calc(100% - 100px);
   max-width: 1366px;
   margin: 0 auto;
-  
 }
 
 .landing-page {
@@ -762,6 +761,10 @@ footer {
     text-align: center;
   }
 
+  .page-address {
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
 }
 
 @media (max-width: 415px) {

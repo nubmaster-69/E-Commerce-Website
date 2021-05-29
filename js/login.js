@@ -74,14 +74,13 @@ function updateUsersAccount() {
 btnLogin.addEventListener('click', () => {
 
     updateUsersAccount();
-    // console.log(users)
 
     let validUserName = false, validPass = false;
 
     let userName = usernameLogin.value;
     let pass = passLogin.value;
-    let parentElem = passLogin.parentElement.parentElement;
-    let parentUserElem = usernameLogin.parentElement.parentElement;
+    let parentElem = passLogin.parentElement;
+    let parentUserElem = usernameLogin.parentElement;
     let name = '';
 
     let isCorrectPass = users.some((user) => {
@@ -95,17 +94,17 @@ btnLogin.addEventListener('click', () => {
 
     if (userName === '') {
         parentUserElem.classList.add('raise-error');
-        parentUserElem.lastElementChild.innerText = 'Please fill in this field!';
+        parentUserElem.parentElement.lastElementChild.innerText = '(*) Please fill in this field!';
         validUserName = false;
     }
     else if (!isCorrectUserName) {
         parentUserElem.classList.add('raise-error');
-        parentUserElem.lastElementChild.innerText = 'Username not found!';
+        parentUserElem.parentElement.lastElementChild.innerText = '(*) Username not found!';
         validUserName = false;
     }
     else {
         parentUserElem.classList.remove('raise-error');
-        parentUserElem.lastElementChild.innerText = '';
+        parentUserElem.parentElement.lastElementChild.innerText = '';
 
         users.forEach(user => {
             if (user.username === userName)
@@ -117,17 +116,17 @@ btnLogin.addEventListener('click', () => {
 
     if (pass === '') {
         parentElem.classList.add('raise-error');
-        parentElem.lastElementChild.innerText = 'Please fill in this field!';
+        parentElem.parentElement.lastElementChild.innerText = '(*) Please fill in this field!';
         validPass = false;
     }
     else if (!isCorrectPass) {
         parentElem.classList.add('raise-error');
-        parentElem.lastElementChild.innerText = 'Incorrect Password!';
+        parentElem.parentElement.lastElementChild.innerText = '(*) Incorrect Password!';
         validPass = false;
     }
     else {
         parentElem.classList.remove('raise-error');
-        parentElem.lastElementChild.innerText = '';
+        parentElem.parentElement.lastElementChild.innerText = '';
         validPass = true;
     }
 
@@ -146,21 +145,21 @@ passSignup.addEventListener('blur', () => {
     // pass must contain a number, a uppercase latter, at least 8 characters and no whitespace allow
     let passwordRegex = /(?=.*\d)(?=.*[A-Z])(?=^\S+$).{8}/
 
-    let parentElem = passSignup.parentElement.parentElement;
+    let parentElem = passSignup.parentElement;
 
     if (pass === '') {
         parentElem.classList.add('raise-error')
-        parentElem.lastElementChild.innerText = "Please fill in this field!"
+        parentElem.parentElement.lastElementChild.innerText = "(*) Please fill in this field!"
         isValidPass = false;
     }
     else if (!passwordRegex.test(pass)) {
         parentElem.classList.add('raise-error')
-        parentElem.lastElementChild.innerText = 'At least 8 characters, a digit and an uppercase'
+        parentElem.parentElement.lastElementChild.innerText = '(*) Password must at least 8 characters, contain a digit and an uppercase'
         isValidPass = false;
     }
     else {
         parentElem.classList.remove('raise-error')
-        parentElem.lastElementChild.innerText = ''
+        parentElem.parentElement.lastElementChild.innerText = ''
         isValidPass = true;
     }
 });
@@ -169,28 +168,28 @@ confirmPass.addEventListener('blur', () => {
     let pass = passSignup.value;
     let cfPass = confirmPass.value;
 
-    let parentElem = confirmPass.parentElement.parentElement;
+    let parentElem = confirmPass.parentElement;
 
     if (cfPass === '') {
         parentElem.classList.add('raise-error')
-        parentElem.lastElementChild.innerText = "Please fill in this field!";
+        parentElem.parentElement.lastElementChild.innerText = "(*) Please fill in this field!";
         isValidPassConfirm = false;
     }
     else if (pass != cfPass) {
         parentElem.classList.add('raise-error')
-        parentElem.lastElementChild.innerText = "Password doesn't match!";
+        parentElem.parentElement.lastElementChild.innerText = "(*) Password doesn't match!";
         isValidPassConfirm = false;
     }
     else {
         parentElem.classList.remove('raise-error')
-        parentElem.lastElementChild.innerText = "";
+        parentElem.parentElement.lastElementChild.innerText = "";
         isValidPassConfirm = true;
     }
 });
 
 usernameSignup.addEventListener('blur', () => {
     let userName = usernameSignup.value;
-    let parentElem = usernameSignup.parentElement.parentElement;
+    let parentElem = usernameSignup.parentElement;
 
     // Only letters and digits are allowed, at least 4, at most 8 character
     let userNameRegex = /(?=^\S+$)([A-Za-z0-9]){5,8}$/
@@ -214,25 +213,24 @@ usernameSignup.addEventListener('blur', () => {
             break;
         }
 
-
     if (userName === '') {
         parentElem.classList.add('raise-error');
-        parentElem.lastElementChild.innerText = 'Please fill in this field!';
+        parentElem.parentElement.lastElementChild.innerText = '(*) Please fill in this field!';
         isValidUserName = false;
     }
     else if (!userNameRegex.test(userName)) {
         parentElem.classList.add('raise-error');
-        parentElem.lastElementChild.innerText = 'At least 5 letters, no special characters'
+        parentElem.parentElement.lastElementChild.innerText = '(*) Username must at least 5 letters and no special characters allowed'
         isValidUserName = false;
     }
     else if (isExistsUserName) {
         parentElem.classList.add('raise-error');
-        parentElem.lastElementChild.innerText = 'Username already existed!';
+        parentElem.parentElement.lastElementChild.innerText = '(*) Username already existed!';
         isValidUserName = false;
     }
     else if (!isExistsUserName) {
         parentElem.classList.remove('raise-error');
-        parentElem.lastElementChild.innerText = '';
+        parentElem.parentElement.lastElementChild.innerText = '';
         isValidUserName = true;
     }
 });
