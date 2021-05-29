@@ -27,7 +27,6 @@
   bottom: 2rem;
   right: 1rem;
   color: #fff;
-  /* background: #2a9dff; */
   background: var(--primary-color);
   width: 45px;
   height: 45px;
@@ -225,21 +224,34 @@ header .menu-toggler {
 
 .nav-link.my-cart.have-items {
   position: relative;
+  cursor: pointer;
 }
 
-#mycart-item {
+#mycart-item,
+.nav-link.my-cart.have-items .mycart-item__container,
+.nav-link.my-cart.have-items:hover #mycart-item::-webkit-scrollbar {
   display: none;
 }
 
+.nav-link.my-cart.have-items:hover .mycart-item__container {
+  display: block;
+  position: absolute;
+  width: 420px;
+  height: 300px;
+  top: 50px;
+  right: 0;
+}
+
 .nav-link.my-cart.have-items:hover #mycart-item {
+  padding-top: .25rem;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   background: #fff;
   border: 3px solid var(--primary-color);
   border-radius: 6px;
-  width: 420px;
-  top: 200%;
-  right: 0;
   animation: fadeIn .3s ease-in-out;
   cursor: pointer;
 }
@@ -289,8 +301,7 @@ header .menu-toggler {
   margin-right: .5rem;
 }
 
-
-.nav-link.my-cart.have-items:hover #mycart-item::before {
+.nav-link.my-cart.have-items:hover .mycart-item__container::before {
   content: "";
   border-left: 18px solid transparent;
   border-right: 18px solid transparent;
@@ -301,9 +312,9 @@ header .menu-toggler {
   transform: translate(-25%, -102%);
 }
 
-.nav-link.my-cart.have-items:hover #mycart-item::after {
+.nav-link.my-cart.have-items:hover .mycart-item__container::after {
   content: "";
-  width: 40%;
+  width: 100%;
   height: 100%;
   background: transparent;
   position: absolute;
@@ -511,7 +522,6 @@ header .menu-toggler {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  /* background-color: var(--primary-color); */
   background: #42454d;
   border: 4px solid #fff;
 }
@@ -941,6 +951,11 @@ footer {
     margin-top: 1.2rem;
     color: rgb(39 39 39);
     font-weight: 500;
+  }
+  
+  .nav-link.my-cart.have-items:hover .mycart-item__container,
+  .nav-link.my-cart.have-items:hover #mycart-item {
+    display: none;
   }
 
   .comingsoon-products {
