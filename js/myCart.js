@@ -1,21 +1,21 @@
 const menuToggler = $('.menu-toggler')
 const navLinks = $('.nav-links')
-const navBar = document.querySelector('.nav-bar');
-const accountToggle = document.querySelector('.no-account');
-const logoutBtn = document.querySelector('.sign-out');
-const itemCartContainer = document.querySelector('.cart-items-container');
-const btnPay = document.querySelector('.btn-pay');
-const totalPrice = document.querySelector('#price');
-const btnCloseConfirmForm = document.querySelector('.btn-purchase.btn-close');
-const btnConfirmPurchase = document.querySelector('.btn-purchase.btn-confirm');
-const confirmPurchaseForm = document.querySelector('.confirm-payment');
-const purchaseThankForm = document.querySelector('.thank-purchase');
-const btnContinueShopping = document.querySelector('.btn-continue');
-const phoneNum = document.querySelector('#phoneNumber');
-const bankAcc = document.querySelector('#bankAccount');
-const errMsgContainer = document.querySelector('.display-error');
-const errMsg = document.querySelector('#error');
-const btnCloseErrMsg = document.querySelector('#btn-close-err');
+const navBar = document.querySelector('.nav-bar')
+const accountToggle = document.querySelector('.no-account')
+const logoutBtn = document.querySelector('.sign-out')
+const itemCartContainer = document.querySelector('.cart-items-container')
+const btnPay = document.querySelector('.btn-pay')
+const totalPrice = document.querySelector('#price')
+const btnCloseConfirmForm = document.querySelector('.btn-purchase.btn-close')
+const btnConfirmPurchase = document.querySelector('.btn-purchase.btn-confirm')
+const confirmPurchaseForm = document.querySelector('.confirm-payment')
+const purchaseThankForm = document.querySelector('.thank-purchase')
+const btnContinueShopping = document.querySelector('.btn-continue')
+const phoneNum = document.querySelector('#phoneNumber')
+const bankAcc = document.querySelector('#bankAccount')
+const errMsgContainer = document.querySelector('.display-error')
+const errMsg = document.querySelector('#error')
+const btnCloseErrMsg = document.querySelector('#btn-close-err')
 
 
 var sumOfTotalPrice = 0;
@@ -71,8 +71,8 @@ function loadCartItems() {
 
     btnDeletes = itemCartContainer.querySelectorAll('.btn-delete')
     checkBoxes = itemCartContainer.querySelectorAll('input[type="checkbox"]')
-    btnDecreases = itemCartContainer.querySelectorAll('.btn-decrease');
-    btnIncreases = itemCartContainer.querySelectorAll('.btn-increase');
+    btnDecreases = itemCartContainer.querySelectorAll('.btn-decrease')
+    btnIncreases = itemCartContainer.querySelectorAll('.btn-increase')
 
     btnDeletes.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -108,44 +108,45 @@ function loadCartItems() {
 
     btnDecreases.forEach(btnDecrease => {
         btnDecrease.addEventListener('click', () => {
-            let nextSib = btnDecrease.nextElementSibling;
+            let nextSib = btnDecrease.nextElementSibling
             let oldQuan = parseInt(nextSib.value)
             let newQuan = oldQuan;
 
             let parent = btnDecrease.parentElement.parentElement
-            let curCheckBok = parent.firstElementChild.firstElementChild.firstElementChild;
+            let curCheckBok = parent.firstElementChild.firstElementChild.firstElementChild
             let unitPrice = parent.firstElementChild.nextElementSibling.textContent
-            newQuan = (newQuan > 1) ? --newQuan : 1;
-            nextSib.value = newQuan;
 
-            sumOfTotalPrice = parseInt(totalPrice.textContent.replace(',', '').substr(2));
+            newQuan = (newQuan > 1) ? --newQuan : 1
+            nextSib.value = newQuan
+
+            sumOfTotalPrice = parseInt(totalPrice.textContent.replace(',', '').substr(2))
             if (curCheckBok.checked) {
                 sumOfTotalPrice -= parseInt(unitPrice.replace(',', '').substr(1)) * parseInt(oldQuan - newQuan)
             }
 
-            totalPrice.textContent = `$ ${sumOfTotalPrice.toLocaleString()}`;
+            totalPrice.textContent = `$ ${sumOfTotalPrice.toLocaleString()}`
         })
     })
 
     btnIncreases.forEach(btnIncrease => {
         btnIncrease.addEventListener('click', (e) => {
-            let preSib = btnIncrease.previousElementSibling;
+            let preSib = btnIncrease.previousElementSibling
             let oldQuan = parseInt(preSib.value)
-            let newQuan = oldQuan;
+            let newQuan = oldQuan
 
             let parent = btnIncrease.parentElement.parentElement
-            let curCheckBok = parent.firstElementChild.firstElementChild.firstElementChild;
+            let curCheckBok = parent.firstElementChild.firstElementChild.firstElementChild
             let unitPrice = parent.firstElementChild.nextElementSibling.textContent
-            newQuan = (newQuan < 99) ? ++newQuan : 99;
 
-            preSib.value = newQuan;
+            newQuan = (newQuan < 99) ? ++newQuan : 99
+            preSib.value = newQuan
 
-            sumOfTotalPrice = parseInt(totalPrice.textContent.replace(',', '').substr(2));
+            sumOfTotalPrice = parseInt(totalPrice.textContent.replace(',', '').substr(2))
             if (curCheckBok.checked) {
                 sumOfTotalPrice += parseInt(unitPrice.replace(',', '').substr(1)) * parseInt(newQuan - oldQuan)
             }
 
-            totalPrice.textContent = `$ ${sumOfTotalPrice.toLocaleString()}`;
+            totalPrice.textContent = `$ ${sumOfTotalPrice.toLocaleString()}`
         })
     })
 
@@ -186,8 +187,8 @@ function createCartItem(item) {
             <button class="btn-delete">
                 <i class="fas fa-times-circle"></i>
             </button>
-        </div>
-    `;
+        </div>`
+
     return cartItem;
 }
 

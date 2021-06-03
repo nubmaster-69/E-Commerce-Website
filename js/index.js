@@ -1,41 +1,34 @@
-
 const menuToggler = $('.menu-toggler')
 const navLinks = $('.nav-links')
-const productContainer = document.querySelector('.product-list');
-const pageNum = document.querySelectorAll('.page-num');
-const prevPage = document.querySelector('.page-prev');
-const nextPage = document.querySelector('.page-next');
-const showcaseImage = document.getElementById('showcase-img');
-const slideImages = document.querySelectorAll('.slide-img');
-const navBar = document.querySelector('.nav-bar');
-const contact = document.querySelectorAll('.contact');
-const cartAmount = document.querySelector('#cart-amount');
-const closePopupMsgBtns = document.querySelectorAll(".close");
-const sliderContainer = document.querySelector('.slider');
+
+const productContainer = document.querySelector('.product-list')
+const pageNum = document.querySelectorAll('.page-num')
+const prevPage = document.querySelector('.page-prev')
+const nextPage = document.querySelector('.page-next')
+const showcaseImage = document.getElementById('showcase-img')
+const slideImages = document.querySelectorAll('.slide-img')
+const navBar = document.querySelector('.nav-bar')
+const contact = document.querySelectorAll('.contact')
+const cartAmount = document.querySelector('#cart-amount')
+const closePopupMsgBtns = document.querySelectorAll(".close")
+const sliderContainer = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide')
-const btnNextSlide = document.querySelector('#nextSlide');
-const btnPrevSlide = document.querySelector('#prevSlide');
-const logoutBtn = document.querySelector('.sign-out');
-
-const myCart = document.querySelector('#my-cart');
+const btnNextSlide = document.querySelector('#nextSlide')
+const btnPrevSlide = document.querySelector('#prevSlide')
+const logoutBtn = document.querySelector('.sign-out')
+const myCart = document.querySelector('#my-cart')
 const cartItem = document.querySelector('#mycart-item')
-const accountToggle = document.querySelector('.no-account');
+const accountToggle = document.querySelector('.no-account')
+const featuredContainer = document.querySelector('.featured-1')
 
-var featuredContainer = document.querySelector('.featured-1');
 var img_width = 800;
 var img_height = 400;
 var slideIdx = 0;
 var currentPage = 1;
 var products;
 var toFavList;
+var idx = 0, imagesLength = slideImages.length;
 
-// Dont remove this function
-// var idx = 0, imagesLength = slideImages.length;
-// setInterval(function autoSlide() {
-//     idx++;
-//     idx = (idx >= imagesLength ? 0 : idx);
-//     changeColorAndImg(slideImages[idx].getAttribute('src'), slideImages[idx].getAttribute('alt'));
-// }, 3500);
 
 // Menu toggle
 $(document).ready(() => {
@@ -45,25 +38,23 @@ $(document).ready(() => {
     })
 })
 
+// Redirect to account page (login & signup)
 accountToggle.addEventListener('click', () => {
     window.location.href = "../html/login.html";
 })
 
-closePopupMsgBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.currentTarget.parentElement.style.display = 'none'
-    })
-})
-
+// Logout button
 logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('login')
     window.location.reload();
 })
 
+
 // Sticky navbar after scroll
 window.addEventListener('scroll', () => {
     document.querySelector('header').classList.toggle('sticky', window.scrollY > 0);
 });
+
 
 // Sticky contact button
 window.addEventListener('scroll', () => {
@@ -71,6 +62,22 @@ window.addEventListener('scroll', () => {
         idx.classList.toggle('active', window.scrollY > 200);
     })
 })
+
+// Close contact message
+closePopupMsgBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.currentTarget.parentElement.style.display = 'none'
+    })
+})
+
+
+// Landing page - auto slide image
+setInterval(function autoSlide() {
+    idx++;
+    idx = (idx >= imagesLength ? 0 : idx);
+    changeColorAndImg(slideImages[idx].getAttribute('src'), slideImages[idx].getAttribute('alt'));
+}, 3500);
+
 
 // Landing page - change color and image
 slideImages.forEach(slideImg => {
@@ -85,7 +92,7 @@ function changeColorAndImg(src, newColor) {
 }
 
 
-// Create items
+// Create products
 let createItem = (idx) => {
     let item = document.createElement('div');
     item.classList = 'item sell-item';
@@ -127,6 +134,7 @@ let getProductDesc = (list) => {
 }
 
 
+// Load account and products when page is fully loaded
 window.addEventListener('load', () => {
     getProductDesc(page1);
     loadAccount();
@@ -140,6 +148,41 @@ function loadAccount() {
         loadMyCart();
     }
 }
+
+function loadMyCart() {
+    let items = Object.keys(localStorage)
+
+    if (items.length > 0) {
+
+        let cartItemsLen = 0;
+        for (item of items)
+            if (item != 'login' && item != 'signup')
+                cartItemsLen++;
+
+        if (cartItemsLen != 0)
+            myCart.classList.replace('no-items', 'have-items');
+
+        cartAmount.textContent = cartItemsLen;
+    }
+
+    for (i of items)
+        if (i == 'login' || i == 'signup')
+            continue;
+        else
+            cartItem.prepend(createMyCartItem(i))
+}
+
+function createMyCartItem(idx) {
+    let li = document.createElement('li');
+    let items = localStorage.getItem(idx).split(';');
+
+    li.innerHTML =
+        `<img src="../img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
+        <span id="cart-item_name">${items[0]}</span>
+        <span id="cart-item_quan">x${items[1]}</span>`
+    return li;
+}
+
 
 //  Pagination
 pageNum.forEach(page => {
@@ -197,6 +240,8 @@ function createPage(pageIdx) {
     }, 100)
 }
 
+
+// Update product slider image's size when resize page
 function updateSize() {
     img_width = featuredContainer.clientWidth;
     img_height = featuredContainer.clientHeight;
@@ -246,40 +291,8 @@ setInterval(() => {
     nextSlide();
 }, 4000);
 
-function loadMyCart() {
-    let items = Object.keys(localStorage)
 
-    if (items.length > 0) {
-
-        let cartItemsLen = 0;
-        for (item of items)
-            if (item != 'login' && item != 'signup')
-                cartItemsLen++;
-
-        if (cartItemsLen != 0)
-            myCart.classList.replace('no-items', 'have-items');
-
-        cartAmount.textContent = cartItemsLen;
-    }
-
-    for (i of items)
-        if (i == 'login' || i == 'signup')
-            continue;
-        else
-            cartItem.prepend(createMyCartItem(i))
-}
-
-function createMyCartItem(idx) {
-    let li = document.createElement('li');
-    let items = localStorage.getItem(idx).split(';');
-
-    li.innerHTML =
-        `<img src="../img/products/Gaming-laptop/${idx.split('-')[1]}/${items[2].trim()}" alt="" />
-        <span id="cart-item_name">${items[0]}</span>
-        <span id="cart-item_quan">x${items[1]}</span>`
-    return li;
-}
-
+// Redirect to myCart page
 myCart.addEventListener('click', () => {
     if (navBar.classList.contains('active'))
         window.location.href = "../html/myCart.html"

@@ -1,20 +1,21 @@
-const backToHomePage = document.querySelector('#back-to-homepage');
+const backToHomePage = document.querySelector('#back-to-homepage')
 
-const usernameLogin = document.querySelector('#username');
-const passLogin = document.querySelector('#password');
-const btnLogin = document.querySelector('#btnLogin');
-const showPassLogin = document.querySelector('#sp-login');
+const usernameLogin = document.querySelector('#username')
+const passLogin = document.querySelector('#password')
+const btnLogin = document.querySelector('#btnLogin')
+const showPassLogin = document.querySelector('#sp-login')
 
-const usernameSignup = document.querySelector('#username-signup');
-const passSignup = document.querySelector('#password-signup');
-const btnSignup = document.querySelector('#btnSignup');
-const showPassSignup = document.querySelector('#sp-signup');
-const confirmPass = document.querySelector('#password-confirm');
+const usernameSignup = document.querySelector('#username-signup')
+const passSignup = document.querySelector('#password-signup')
+const btnSignup = document.querySelector('#btnSignup')
+const showPassSignup = document.querySelector('#sp-signup')
+const confirmPass = document.querySelector('#password-confirm')
 
-var isValidUserName = true;
-var isValidPass = true;
-var isValidPassConfirm = true;
+var isValidUserName = true
+var isValidPass = true
+var isValidPassConfirm = true
 
+// suppose that website already has 2 users
 const users = [
     {
         username: 'harry123',
@@ -31,6 +32,7 @@ const users = [
 backToHomePage.addEventListener('click', () => {
     window.location.href = "./index.html";
 });
+
 
 showPassLogin.addEventListener('click', () => {
     if (passLogin.getAttribute('type') === "password") {
@@ -133,7 +135,6 @@ btnLogin.addEventListener('click', () => {
     if (validUserName && validPass) {
         localStorage.setItem('login', `1;${name}`);
 
-        // window.location.href = `./index.html`;
         // Return to previous tab
         window.history.go(-1);
     }
@@ -250,7 +251,6 @@ btnSignup.addEventListener('click', () => {
 
         localStorage.setItem('login', `1;${usernameSignup.value}`);
 
-        // window.location.href = `./index.html`;
         // Return to previous tab
         window.history.go(-1);
     }
